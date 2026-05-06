@@ -3,406 +3,556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mount Rinjani Detailed Itineraries | Rinjani Excellence</title>
+    
+    <!-- SEO & META TAGS -->
+    <title>Detailed Trekking Itineraries | Rinjani Excellence</title>
+    <meta name="description" content="Read the full, detailed itineraries for Mount Rinjani trekking packages. From the 2D1N Senaru Crater Rim to the full 4D3N relax trekking and Torean scenic route.">
+    
+    <link rel="alternate" hreflang="en" href="https://rinjaniexcellence.com/en/itinerary" />
+    <link rel="alternate" hreflang="id" href="https://rinjaniexcellence.com/id/itinerary" />
+    <link rel="alternate" hreflang="x-default" href="https://rinjaniexcellence.com/itinerary" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
                     colors: {
-                        primary: '#0284c7', secondary: '#0369a1', accent: '#38bdf8', warm: '#f59e0b', tripadvisor: '#34e0a1'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'], heading: ['Bebas Neue', 'sans-serif'], script: ['Great Vibes', 'cursive'],
+                        sky: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7' },
+                        emerald: { 50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981', 600: '#059669' },
+                        sunset: { 400: '#fb923c', 500: '#f97316' }
                     }
                 }
             }
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        .goog-te-banner-frame { display: none !important; }
-        body { top: 0px !important; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #0ea5e9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
     </style>
 </head>
-<body class="font-sans text-gray-800 antialiased bg-slate-50">
+<body class="font-sans text-slate-800 bg-slate-50 antialiased">
 
-    <!-- Navigation -->
-    <header class="bg-slate-900/95 backdrop-blur-sm shadow-md fixed w-full z-50 transition-all duration-300">
+    <!-- HEADER & NAVIGATION -->
+    <header class="fixed w-full z-[100] glass-nav transition-all duration-300" id="main-header">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
-                    <div class="flex flex-col items-center justify-center text-white drop-shadow-md">
-                        <i class="fa-solid fa-mountain text-xl mb-1"></i>
-                        <span class="text-lg font-heading tracking-widest leading-none">RINJANI</span>
-                        <span class="text-[0.5rem] uppercase tracking-widest mt-1">Excellence</span>
-                    </div>
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0">
+                    <img src="images/logo.png" alt="Rinjani Excellence Logo" class="h-10 md:h-14 object-contain">
                 </a>
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white/90 hover:text-accent font-medium transition-colors">Home</a>
-                    <a href="articles.html" class="text-white/90 hover:text-accent font-medium transition-colors">Articles</a>
-                    <div id="google_translate_element" class="ml-4 bg-white/20 p-1 rounded backdrop-blur-sm"></div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-sky-500 transition"><i class="fa-solid fa-house mr-1"></i> Home</a>
+                    <a href="index.html#routes" class="hover:text-sky-500 transition">Routes & Info</a>
+                    <a href="index.html#packages" class="hover:text-sky-500 transition">Packages</a>
+                    <a href="articles.html" class="hover:text-sky-500 transition">Articles</a>
+                    
+                    <!-- Language Switcher (Desktop) -->
+                    <div class="relative group cursor-pointer ml-4">
+                        <div class="flex items-center gap-2 text-slate-700 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:border-sky-300 transition">
+                            <i class="fa-solid fa-earth-americas text-sky-500"></i>
+                            <span id="current-lang-desktop" class="uppercase font-bold text-sm">EN</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                        </div>
+                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <ul class="p-2 space-y-1" id="lang-list-desktop"></ul>
+                        </div>
+                    </div>
                 </nav>
+
+                <!-- Mobile Navigation Controls -->
+                <div class="flex lg:hidden items-center gap-3">
+                    <div class="relative group cursor-pointer" id="mobile-lang-dropdown-wrapper">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white shadow-sm text-sky-600" id="mobile-lang-btn">
+                            <span id="current-lang-mobile" class="uppercase font-bold text-xs">EN</span>
+                        </div>
+                        <div class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible transition-all duration-200 z-50" id="mobile-lang-menu">
+                            <ul class="p-2 space-y-1" id="lang-list-mobile"></ul>
+                        </div>
+                    </div>
+                    <button id="mobile-menu-btn" class="text-slate-700 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 shadow-lg absolute w-full left-0">
+            <div class="px-6 py-6 flex flex-col space-y-4">
+                <a href="index.html" class="text-base font-bold text-slate-800">Home</a>
+                <a href="index.html#packages" class="text-base font-bold text-slate-800">Packages</a>
+                <a href="articles.html" class="text-base font-bold text-slate-800">Articles</a>
             </div>
         </div>
     </header>
 
-    <div class="pt-24 pb-12 bg-primary text-white text-center">
-        <h1 class="text-4xl md:text-5xl font-heading tracking-wide mb-2">Detailed Itineraries</h1>
-        <p class="text-sky-100">Explore the full day-by-day plans for our Mount Rinjani Trekking Packages.</p>
-    </div>
-
-    <!-- Itineraries Content -->
-    <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
-        
-       <!-- PACKAGE DETAILS: 2 DAYS 1 NIGHT SENARU CRATER RIM (VERBATIM TEXT) -->
-<section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Package Header -->
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <span class="text-emerald-600 font-bold tracking-wider uppercase text-sm mb-2 block">Beginner Friendly / Short Time</span>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-6">Mount Rinjani Trekking 2 Days 1 Night Via Senaru</h1>
-            <div class="text-lg text-slate-600 space-y-4 text-left md:text-center">
-                <p>
-                    This route appeals to those short of time , for climbing to Mt. Rinjani’s Crater Rim in Gunung
-                    Rinjani National Park. Starting and ending in Senaru village , it provides spectacular views of
-                    Lake Segara Anak within the new volcano’s crater.
-                </p>
-                <p>
-                    This gentle trek is good for beginners, or families with children ( minimum 6 years old ) Tour
-                    can leave every day except weather condition does not permitted.
-                </p>
-                <p class="font-bold text-emerald-700 bg-emerald-50 inline-block px-4 py-2 rounded-lg">
-                    Highlights Are: Spectacular Sunset and Sunrise at the Senaru Crater Rim
-                </p>
-            </div>
+    <!-- PAGE HERO -->
+    <section class="relative pt-32 pb-16 bg-sky-900 flex flex-col justify-center overflow-hidden border-b-8 border-emerald-500">
+        <div class="absolute inset-0 z-0">
+            <img src="images/3d2n-summit-lake.jpeg" alt="Trekking Itinerary Background" class="w-full h-full object-cover opacity-30">
         </div>
-
-        <!-- Featured Image -->
-        <div class="mb-16 rounded-2xl overflow-hidden shadow-xl">
-            <img src="https://images.unsplash.com/photo-1621255562768-3e4b3c7d6ab6?auto=format&fit=crop&w=1200&q=80" 
-                 alt="Trekkers camping at Mount Rinjani crater rim viewing the mountain" 
-                 class="w-full h-[400px] object-cover">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10">
+            <span class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-3 block" data-i18n="itin_pre">Detailed Plans</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-lg" data-i18n="itin_title">Trekking Itineraries</h1>
+            <p class="text-lg text-slate-200 mt-4 max-w-2xl mx-auto" data-i18n="itin_subtitle">Find the perfect journey that matches your time, fitness, and goals.</p>
         </div>
+    </section>
 
-        <!-- ITINERARY & INCLUSIONS GRID -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            <!-- Left Column: Itinerary Timeline -->
-            <div class="lg:col-span-2">
-                <h2 class="text-3xl font-bold text-slate-800 mb-8 uppercase tracking-wide border-b-2 border-emerald-500 pb-2 inline-block">TREK ITINERARY:</h2>
+    <!-- CONTENT SECTION -->
+    <main class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+
+        <!-- ==========================================
+             PACKAGE 1 : 2 DAYS 1 NIGHT VIA SENARU 
+             (VERBATIM DARI PERMINTAAN ABANG)
+             ========================================== -->
+        <section id="package-1" class="scroll-mt-32">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
                 
-                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+                <!-- 1. FOTO DIATAS -->
+                <div class="relative h-64 md:h-96 w-full">
+                    <img src="images/2d1n-senaru-crater-rim.jpeg" alt="2 Days 1 Night Senaru" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
+                        <span class="bg-emerald-500 px-4 py-1.5 text-xs font-bold uppercase rounded-full mb-3 inline-block tracking-wider">Package 1</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Mount Rinjani Trekking 2 DAYS 1 Night Via senaru village</h2>
+                    </div>
+                </div>
+
+                <!-- 2. TEKS ITINERARY UTUH -->
+                <div class="p-6 md:p-10 text-slate-600 leading-relaxed space-y-6">
+                    <p>This route appeals to those short of time , for climbing to Mt. Rinjani’s Crater Rim in Gunung Rinjani National Park. Starting and ending in Senaru village , it provides spectacular views of Lake Segara Anak within the new volcano’s crater.</p>
+                    <p>This gentle trek is good for beginners, or families with children ( minimum 6 years old ) Tour can leave every day except weather condition does not permitted.</p>
                     
-                    <!-- Day 0 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-emerald-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">0</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl border border-slate-100 shadow-md">
-                            <h3 class="font-bold text-emerald-700 text-xl mb-3">Day 0 :</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Pick up service ( anywhere around of Lombok ) then transfer to Senaru Village and Check in
-                                at senaru accommodation / Lodge ( with hot/cold water, air condition ), briefing and free at
-                                your leisure. If time allows ( 3 hours before sunset ) you can visit the Famous Waterfall in
-                                Senaru ( Sendang Gile and Tiu Kelep Waterfall & Senaru traditional village .
-                            </p>
+                    <div class="bg-sunset-50 border-l-4 border-sunset-500 p-4 rounded-r-lg">
+                        <p class="font-bold text-sunset-700">Highlights Are: Spectacular Sunset and Sunrise at the Senaru Crater Rim</p>
+                    </div>
+
+                    <h3 class="text-2xl font-extrabold text-slate-800 border-b-2 border-slate-100 pb-3 mt-10">TREK ITINERARY:</h3>
+                    
+                    <div class="space-y-6 mt-6">
+                        <div>
+                            <h4 class="font-bold text-lg text-emerald-600 bg-emerald-50 inline-block px-3 py-1 rounded-lg mb-2">Day 0 :</h4>
+                            <p>Pick up service ( anywhere around of Lombok ) then transfer to Senaru Village and Check in at senaru accommodation / Lodge ( with hot/cold water, air condition ), briefing and free at your leisure. If time allows ( 3 hours before sunset ) you can visit the Famous Waterfall in Senaru ( Sendang Gile and Tiu Kelep Waterfall & Senaru traditional village .</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-lg text-emerald-600 bg-emerald-50 inline-block px-3 py-1 rounded-lg mb-2">Day 1 :</h4>
+                            <p>Breakfast at 06,30 and Register at the Rinjani Trek Centre (RTC) in Senaru (601m) early in the morning you meet your guide and he arranges the National Park entry or checking barcode Code ticket E-Rinjani . The RTC staff briefing describes the route details, local cultural traditions and what you might see, and explains rubbish management and safety procedures.</p>
+                            <p class="mt-3">The first hours of the trek climb steeply through thick tropical forest rich in flora, bird life and variety of butterflies. You might see orchid and if lucky, the rare black ebony leaf monkey, known locally as lutung. Rest stops are taken along the way, and at pos 2 Montong Satas shelter ( 1,500m ). Village stories and local legends are related by your guide. Features include the Bayan tree bunut Ngenkang that looks like someone standing with their legs apart, and the batu penyesalan stone.</p>
+                            <p class="mt-3">Depending on your preference and weather conditions, the night’s camp is made either in the forest at pos 3 Mondokon Lolak (2,000m) after about five hours climb from senaru, or continue the ascent for another couple of hours through grassy meadows Plawangan 1 Senaru crater rim at 2,641m. from the crater rim are sweeping views across the lake Segara Anak (2,00m) to the summit of Mt. Rinjani. Within the crater, Mt. Baru ( 2,351m) is active, last erupting dramatically in 2009 On a clear evening the Gili Isles, Bali and Mt. Agung can be seen to the west.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-lg text-emerald-600 bg-emerald-50 inline-block px-3 py-1 rounded-lg mb-2">Day 2 :</h4>
+                            <p>Sunrise at the crater rim is memorable to Day 2, enjoyed after a pre-dawn two hour climb for those camping at pos 3 or we called Mondokon Lolak. After enjoying the view, descend down the trail down to Senaru village through first grassland then back into the shade of the tropical forest.</p>
+                            <p class="mt-3">After about seven hours from the rim, the trek ends at the road head in Senaru . Trek ends in ( CV. RINJANI EXCELLENT OFFICE ) it is around 13,30pm and then Transfer out to your next destination ( Following the spot on Day 0 ).</p>
                         </div>
                     </div>
 
-                    <!-- Day 1 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-emerald-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">1</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl border border-slate-100 shadow-md">
-                            <h3 class="font-bold text-emerald-700 text-xl mb-3">Day 1 :</h3>
-                            <div class="space-y-3 text-slate-600 text-sm leading-relaxed">
-                                <p>
-                                    Breakfast at 06,30 and Register at the Rinjani Trek Centre (RTC) in Senaru (601m) early in
-                                    the morning you meet your guide and he arranges the National Park entry or checking
-                                    barcode Code ticket E-Rinjani . The RTC staff briefing describes the route details, local
-                                    cultural traditions and what you might see, and explains rubbish management and safety
-                                    procedures.
-                                </p>
-                                <p>
-                                    The first hours of the trek climb steeply through thick tropical forest rich in flora, bird life and
-                                    variety of butterflies. You might see orchid and if lucky, the rare black ebony leaf monkey,
-                                    known locally as lutung. Rest stops are taken along the way, and at pos 2 Montong Satas
-                                    shelter ( 1,500m ). Village stories and local legends are related by your guide. Features
-                                    include the Bayan tree bunut Ngenkang that looks like someone standing with their legs
-                                    apart, and the batu penyesalan stone.
-                                </p>
-                                <p>
-                                    Depending on your preference and weather conditions, the night’s camp is made either in
-                                    the forest at pos 3 Mondokon Lolak (2,000m) after about five hours climb from senaru, or
-                                    continue the ascent for another couple of hours through grassy meadows Plawangan 1
-                                    Senaru crater rim at 2,641m. from the crater rim are sweeping views across the lake Segara
-                                    Anak (2,00m) to the summit of Mt. Rinjani. Within the crater, Mt. Baru ( 2,351m) is active,
-                                    last erupting dramatically in 2009 On a clear evening the Gili Isles, Bali and Mt. Agung can
-                                    be seen to the west.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="bg-sky-50 p-4 rounded-lg border border-sky-100 mt-6">
+                        <p class="font-bold text-slate-800">Note:</p>
+                        <p>● 30% Deposit Of The Total Price To Our PayPal Account / Bank Account</p>
                     </div>
 
-                    <!-- Day 2 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-emerald-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">2</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl border border-slate-100 shadow-md">
-                            <h3 class="font-bold text-emerald-700 text-xl mb-3">Day 2 :</h3>
-                            <div class="space-y-3 text-slate-600 text-sm leading-relaxed">
-                                <p>
-                                    Sunrise at the crater rim is memorable to Day 2, enjoyed after a pre-dawn two hour climb for
-                                    those camping at pos 3 or we called Mondokon Lolak. After enjoying the view, descend
-                                    down the trail down to Senaru village through first grassland then back into the shade of the
-                                    tropical forest.
-                                </p>
-                                <p>
-                                    After about seven hours from the rim, the trek ends at the road head in Senaru . Trek ends in
-                                    ( CV. RINJANI EXCELLENT OFFICE ) it is around 13,30pm and then Transfer out to your
-                                    next destination ( Following the spot on Day 0 ).
-                                </p>
-                            </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                        <!-- Inclusions -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-lg text-emerald-600 mb-4 border-b border-slate-200 pb-2">RATE INCLUSIONS :</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>● A Night At Senaru Accommodation ( Hot&Cold Water,Air Condition, Wifi ) .</li>
+                                <li>● Transport ( Pick Up / Drop Off. )</li>
+                                <li>● Experienced local guide</li>
+                                <li>● Experienced Local Porter.</li>
+                                <li>● Camping Equipments</li>
+                                <li>● Cooking Gears.</li>
+                                <li>● Meals (3 Times A Day).</li>
+                                <li>● Fruits.</li>
+                                <li>● Cakes.</li>
+                                <li>● Mineral Water ( 3 liter / person a day )</li>
+                                <li>● Trekking Insurance ( Cooperate With National Park).</li>
+                                <li>● Medical check-up before start trekking</li>
+                                <li>● National Park Entrance Fee</li>
+                            </ul>
+                        </div>
+
+                        <!-- Exclusions & What to bring -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-lg text-sunset-600 mb-2">RATE NOT INCLUSION .</h4>
+                            <h4 class="font-bold text-md text-slate-800 mt-4 mb-2">WHAT’S SOULD STUFF TREK TO BRING :</h4>
+                            <p class="text-xs text-slate-500 mb-4 leading-relaxed">Here you Day Packs Personal (to carry by yourself) Additional charge if you need Extra Porter to carry your Personal Stuff (US$ 25 a Day ) and the rest of your luggage will keep at our storage room :</p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1 text-xs font-medium text-slate-600">
+                                <li>● Torch or Flashlight.</li>
+                                <li>● Trekking / Running Shoes / Boots.</li>
+                                <li>● 2/3 pcs. T-Shirt.</li>
+                                <li>● 2 pcs. Short.</li>
+                                <li>● Sun Block, Lotion, Hat, Cap, Sun Glasses.</li>
+                                <li>● Long Pants.</li>
+                                <li>● Warmest Jacket.</li>
+                                <li>● Gloves.</li>
+                                <li>● Warm Hat.</li>
+                                <li>● Tiger Balm or Spray For Muscle.</li>
+                                <li>● Camera.</li>
+                                <li>● Toiletries.</li>
+                                <li>● Insect Repellent.</li>
+                                <li>● Personal Medication.</li>
+                                <li>● Trekking Poles / Stick (Optional).</li>
+                                <li>● Sandal (Optional).</li>
+                                <li>● Swimming Suite (Optional).</li>
+                                <li>● Binocular (Optional).</li>
+                                <li>● Garbage Plastic Can (Optional).</li>
+                                <li>● Extra Trial Snacks(Optional).</li>
+                            </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
+        </section>
 
-            <!-- Right Column: Inclusions, Exclusions & Gear -->
-            <div class="lg:col-span-1 space-y-8">
-                
-                <!-- Deposit Note -->
-                <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
-                    <p class="text-sm font-semibold text-amber-800">
-                        Note:<br>
-                        ● 30% Deposit Of The Total Price To Our PayPal Account / Bank Account
-                    </p>
+        <!-- ==========================================
+             PACKAGE 2 : 2 DAYS 1 NIGHT SEMBALUN SUMMIT
+             ========================================== -->
+        <section id="package-2" class="scroll-mt-32">
+            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-200">
+                <!-- 1. FOTO DIATAS -->
+                <div class="relative h-64 md:h-96 w-full">
+                    <img src="images/2d1n-sembalun-summit.jpeg" alt="2 Days 1 Night Sembalun Summit" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
+                        <span class="bg-sky-500 px-4 py-1.5 text-xs font-bold uppercase rounded-full mb-3 inline-block tracking-wider">Package 2</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">2 Days 1 Night Sembalun Summit</h2>
+                    </div>
                 </div>
-
-                <!-- Inclusions -->
-                <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
-                    <h3 class="text-xl font-bold text-emerald-800 mb-4 uppercase">RATE INCLUSIONS :</h3>
-                    <ul class="space-y-2 text-sm text-emerald-900">
-                        <li>● A Night At Senaru Accommodation ( Hot&Cold Water,Air Condition, Wifi ) .</li>
-                        <li>● Transport ( Pick Up / Drop Off. )</li>
-                        <li>●Experienced local guide</li>
-                        <li>● Experienced Local Porter.</li>
-                        <li>● Camping Equipments</li>
-                        <li>● Cooking Gears.</li>
-                        <li>● Meals (3 Times A Day).</li>
-                        <li>● Fruits.</li>
-                        <li>● Cakes.</li>
-                        <li>● Mineral Water ( 3 liter / person a day )</li>
-                        <li>● Trekking Insurance ( Cooperate With National Park).</li>
-                        <li>● Medical check-up before start trekking</li>
-                        <li>● National Park Entrance Fee</li>
+                <!-- 2. TEKS -->
+                <div class="p-6 md:p-10 text-slate-600 leading-relaxed space-y-6">
+                    <p>Paket pendakian ini dirancang khusus bagi pendaki yang memiliki stamina fisik sangat baik dan ingin mencapai puncak dalam waktu singkat. Jalur Sembalun memungkinkan Anda untuk mencapai puncak tertinggi Rinjani (3.726 mdpl) hanya dalam 2 hari 1 malam.</p>
+                    
+                    <h3 class="text-2xl font-extrabold text-slate-800 border-b-2 border-slate-100 pb-3 mt-8">Itinerary Overview:</h3>
+                    <ul class="space-y-4 mt-4">
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-sky-600 text-lg block mb-2">Day 1: Sembalun Village - Sembalun Crater Rim</strong>
+                            Mulai pendakian dari desa Sembalun (1.100m) melewati padang savana yang luas. Menginap di Sembalun Crater Rim (2.639m) untuk beristirahat sebelum penyerangan puncak (Summit Attack).
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-sky-600 text-lg block mb-2">Day 2: Summit Rinjani - Sembalun Village</strong>
+                            Bangun pukul 02:00 pagi, mulai mendaki medan berpasir yang curam menuju Puncak Rinjani (3.726m). Menikmati sunrise spektakuler, lalu turun kembali ke Crater Rim untuk sarapan, dan lanjut turun ke Sembalun Village.
+                        </li>
                     </ul>
                 </div>
-
-                <!-- Exclusions & Gear List -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                    <h3 class="text-xl font-bold text-red-700 mb-4 uppercase">RATE NOT INCLUSION .</h3>
-                    <h4 class="font-bold text-slate-800 mb-2 uppercase text-sm">WHAT’S SOULD STUFF TREK TO BRING :</h4>
-                    
-                    <div class="text-sm text-slate-700 mb-4 space-y-2">
-                        <p>Here you Day Packs Personal (to carry by yourself)</p>
-                        <p>Additional charge if you need Extra Porter to carry your Personal Stuff (US$ 25 a Day ) and
-                        the rest of your luggage will keep at our storage room :</p>
+            </div>
+        </section>
+        <!-- ==========================================
+             PACKAGE 3 : 3 DAYS 2 NIGHTS SUMMIT & LAKE
+             ========================================== -->
+        <section id="package-3" class="scroll-mt-32">
+            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-200">
+                <div class="relative h-64 md:h-96 w-full">
+                    <img src="images/3d2n-summit-lake.jpeg" alt="3 Days 2 Nights Summit and Lake" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
+                        <span class="bg-sunset-500 px-4 py-1.5 text-xs font-bold uppercase rounded-full mb-3 inline-block tracking-wider">Package 3</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">3 Days 2 Nights Summit & Lake</h2>
                     </div>
-
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2 text-xs text-slate-600 font-medium">
-                        <li>● Torch or Flashlight.</li>
-                        <li>● Trekking / Running Shoes / Boots.</li>
-                        <li>● 2/3 pcs. T-Shirt.</li>
-                        <li>● 2 pcs. Short.</li>
-                        <li>● Sun Block, Lotion, Hat, Cap, Sun Glasses.</li>
-                        <li>● Long Pants.</li>
-                        <li>● Warmest Jacket.</li>
-                        <li>● Gloves.</li>
-                        <li>● Warm Hat.</li>
-                        <li>● Tiger Balm or Spray For Muscle.</li>
-                        <li>● Camera.</li>
-                        <li>● Toiletries.</li>
-                        <li>● Insect Repellent.</li>
-                        <li>● Personal Medication.</li>
-                        <li>● Trekking Poles / Stick (Optional).</li>
-                        <li>● Sandal (Optional).</li>
-                        <li>● Swimming Suite (Optional).</li>
-                        <li>● Binocular (Optional).</li>
-                        <li>● Garbage Plastic Can (Optional).</li>
-                        <li>● Extra Trial Snacks(Optional)</li>
+                </div>
+                <div class="p-6 md:p-10 text-slate-600 leading-relaxed space-y-6">
+                    <p>Designed for experienced trekkers. Not recommended for beginners due to long trekking hours (up to 10 hours on Day 2). Ini adalah paket trekking Rinjani yang paling diminati yang mencakup semua destinasi utama.</p>
+                    
+                    <h3 class="text-2xl font-extrabold text-slate-800 border-b-2 border-slate-100 pb-3 mt-8">Itinerary Overview:</h3>
+                    <ul class="space-y-4 mt-4">
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-sunset-600 text-lg block mb-2">Day 1: Sembalun - Sembalun Crater Rim</strong>
+                            Mulai perjalanan dari Sembalun Gate. Berjalan di tengah padang savana menuju Pos 1, 2, dan 3. Dilanjutkan dengan tanjakan terjal menuju Crater Rim Sembalun. Menginap malam pertama di sini.
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-sunset-600 text-lg block mb-2">Day 2: Summit - Segara Anak Lake - Senaru Crater Rim</strong>
+                            Summit attack jam 2 pagi. Setelah sarapan di camp, perjalanan dilanjutkan menuruni tebing ke Danau Segara Anak. Waktu bebas untuk mandi di air panas alami. Setelah makan siang, mendaki lagi menuju Senaru Crater Rim untuk bermalam.
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-sunset-600 text-lg block mb-2">Day 3: Senaru Crater Rim - Senaru Village</strong>
+                            Turun melintasi hutan hujan lebat menuju Desa Senaru. Diperkirakan tiba pada siang/sore hari, lalu diantar menuju destinasi Anda selanjutnya di Lombok.
+                        </li>
                     </ul>
                 </div>
-
-                <!-- Booking CTA -->
-                <a href="https://wa.me/1234567890?text=I%20want%20to%20book%20the%202D1N%20Senaru%20Trek" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-emerald-600/30 transition-all text-lg">
-                    Book This Package Now
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-        <!-- Package 3 -->
-        <section id="pkg-3" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">3. Rinjani Trekking 4 Days 3 Nights</h2>
-            <div class="mb-6 bg-sky-50 p-4 rounded-lg">
-                <h3 class="font-bold text-primary mb-1">Overview</h3>
-                <p class="text-slate-700 text-sm">Paket ini cocok untuk pendaki yang ingin menikmati perjalanan lebih santai dan menikmati panorama Gunung Rinjani secara maksimal.</p>
-            </div>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 1 – Sembalun → Pos 2</h4>
-                    <p>Trekking menuju Pos 1 dan Pos 2. Camping di Pos 2.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 2 – Pos 2 → Sembalun Crater Rim</h4>
-                    <p>Trekking menuju Pos 3 dan crater rim. Menikmati sunset dan camping.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 3 – Summit → Segara Anak</h4>
-                    <p>Summit attack dini hari lalu turun menuju Danau Segara Anak.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 4 – Lake → Senaru</h4>
-                    <p>Trekking menuju Senaru Crater Rim lalu turun ke Desa Senaru.</p>
-                </div>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Rinjani Trekking 4 Days 3 Nights memberikan pengalaman trekking santai dengan kesempatan menikmati semua panorama terbaik Gunung Rinjani.</p>
             </div>
         </section>
 
-        <!-- Package 4 -->
-        <section id="pkg-4" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">4. Rinjani Crater Rim Trek 2 Days 1 Night</h2>
-            <div class="mb-6 bg-sky-50 p-4 rounded-lg">
-                <h3 class="font-bold text-primary mb-1">Overview</h3>
-                <p class="text-slate-700 text-sm">Paket ini cocok untuk traveler yang ingin menikmati panorama Rinjani tanpa summit.</p>
-            </div>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 1</h4>
-                    <p>Senaru → Crater Rim Senaru.</p>
+        <!-- ==========================================
+             PACKAGE 4 : 4 DAYS 3 NIGHTS RELAX TREKKING
+             ========================================== -->
+        <section id="package-4" class="scroll-mt-32">
+            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-200">
+                <div class="relative h-64 md:h-96 w-full">
+                    <img src="images/4d3n-relax-trekking.jpeg" alt="4 Days 3 Nights Relax Trekking" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
+                        <span class="bg-purple-500 px-4 py-1.5 text-xs font-bold uppercase rounded-full mb-3 inline-block tracking-wider">Package 4</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">4 Days 3 Nights Relax Trekking</h2>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 2</h4>
-                    <p>Sunrise → Turun ke Senaru.</p>
-                </div>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Rinjani Crater Rim Trek menawarkan panorama terbaik Danau Segara Anak tanpa harus mendaki hingga summit.</p>
-            </div>
-        </section>
-
-        <!-- Package 5 -->
-        <section id="pkg-5" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">5. Rinjani Lake Trek 3 Days 2 Nights</h2>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 1</h4><p>Senaru → Crater Rim</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 2</h4><p>Turun ke Danau Segara Anak</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900">Day 3</h4><p>Kembali ke Senaru</p>
+                <div class="p-6 md:p-10 text-slate-600 leading-relaxed space-y-6">
+                    <p>A more relaxed itinerary with shorter daily trekking duration (~8 hours). Ideal for those who want to enjoy the journey without rushing. Cocok untuk menikmati alam Gunung Rinjani dengan ritme santai.</p>
+                    
+                    <h3 class="text-2xl font-extrabold text-slate-800 border-b-2 border-slate-100 pb-3 mt-8">Itinerary Overview:</h3>
+                    <ul class="space-y-4 mt-4">
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-purple-600 text-lg block mb-2">Day 1: Sembalun - Sembalun Crater Rim</strong>
+                            Trekking santai melewati savana menuju Crater Rim Sembalun.
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-purple-600 text-lg block mb-2">Day 2: Summit - Segara Anak Lake</strong>
+                            Penyerangan puncak, lalu turun santai menuju Danau Segara Anak dan bermalam di tepi danau yang sejuk.
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-purple-600 text-lg block mb-2">Day 3: Segara Anak Lake - Senaru Crater Rim</strong>
+                            Pagi hari dihabiskan sepenuhnya untuk relaksasi di area danau dan air panas. Siang hari mendaki perlahan menuju Senaru Crater Rim.
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-purple-600 text-lg block mb-2">Day 4: Senaru Crater Rim - Senaru Village</strong>
+                            Menuruni hutan tropis Rinjani dengan udara yang sejuk hingga tiba kembali di basecamp Senaru.
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Paket ini fokus pada eksplorasi Danau Segara Anak dan pemandian air panas alami.</p>
-            </div>
         </section>
 
-        <!-- Package 6 -->
-        <section id="pkg-6" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">6. Rinjani Summit Trek 3 Days 2 Nights (Sembalun Return)</h2>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <div><h4 class="font-bold text-slate-900">Day 1</h4><p>Sembalun → Crater Rim</p></div>
-                <div><h4 class="font-bold text-slate-900">Day 2</h4><p>Summit → Crater Rim</p></div>
-                <div><h4 class="font-bold text-slate-900">Day 3</h4><p>Turun ke Sembalun</p></div>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Paket summit dengan waktu lebih santai untuk mencapai puncak Gunung Rinjani.</p>
-            </div>
-        </section>
-
-        <!-- Package 7 -->
-        <section id="pkg-7" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">7. Rinjani Lake & Hot Spring Trek</h2>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <div><h4 class="font-bold text-slate-900">Day 1</h4><p>Senaru → Crater Rim</p></div>
-                <div><h4 class="font-bold text-slate-900">Day 2</h4><p>Danau Segara Anak & Hot Spring</p></div>
-                <div><h4 class="font-bold text-slate-900">Day 3</h4><p>Kembali ke Senaru</p></div>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Paket trekking yang fokus pada eksplorasi danau dan pemandian air panas.</p>
-            </div>
-        </section>
-
-        <!-- Package 8 -->
-        <section id="pkg-8" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">8. Rinjani Explorer Trek 5 Days 4 Nights</h2>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <p>Trekking panjang menjelajahi seluruh area Gunung Rinjani dengan waktu santai.</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Paket trekking panjang bagi traveler yang ingin menjelajahi seluruh kawasan Gunung Rinjani.</p>
+        <!-- ==========================================
+             PACKAGE 5 : TOREAN ROUTE - THE SCENIC TRAIL
+             ========================================== -->
+        <section id="package-5" class="scroll-mt-32">
+            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-200">
+                <div class="relative h-64 md:h-96 w-full">
+                    <img src="images/torean-scenic-trail.jpeg" alt="Torean Route Trekking" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
+                        <span class="bg-emerald-500 px-4 py-1.5 text-xs font-bold uppercase rounded-full mb-3 inline-block tracking-wider">Package 5</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Torean Route - The Scenic Trail</h2>
+                    </div>
+                </div>
+                <div class="p-6 md:p-10 text-slate-600 leading-relaxed space-y-6">
+                    <p>The Torean route offers a completely different trekking experience compared to other routes. Starting from Torean Village (~600 m), the trail leads to Segara Anak Lake (~2,000 m) through a unique landscape.</p>
+                    <p>Unlike other routes, Torean features: River-side trekking, Natural waterfalls, Lush green valleys, and a Less crowded atmosphere. One of the highlights is Birisan Nangka, a scenic point with dramatic cliffs and valley views. This route is highly recommended as a descent option for those who want a more natural and scenic experience.</p>
+                    
+                    <h3 class="text-2xl font-extrabold text-slate-800 border-b-2 border-slate-100 pb-3 mt-8">Itinerary Overview (3D2N Sembalun - Torean):</h3>
+                    <ul class="space-y-4 mt-4">
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-emerald-600 text-lg block mb-2">Day 1: Sembalun - Sembalun Crater Rim</strong>
+                            Melewati rute savana klasik menuju tempat peristirahatan pertama di bibir kawah Sembalun.
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-emerald-600 text-lg block mb-2">Day 2: Summit Rinjani - Danau Segara Anak</strong>
+                            Menuju puncak saat subuh. Kembali ke tenda, lalu turun ke area Danau Segara Anak untuk bersantai dan bermalam.
+                        </li>
+                        <li class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <strong class="text-emerald-600 text-lg block mb-2">Day 3: Segara Anak Lake - Torean Village</strong>
+                            Hari paling magis! Pulang melalui lembah Torean yang mengikuti aliran sungai dari danau, melewati tebing raksasa dan air terjun menawan hingga tiba di Desa Torean.
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
-
-        <!-- Package 9 -->
-        <section id="pkg-9" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">9. Rinjani Photography Trek 4 Days</h2>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <p>Trekking dengan fokus sunrise, sunset, dan spot fotografi terbaik di Rinjani.</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Paket ini dirancang untuk fotografer yang ingin menangkap panorama spektakuler Gunung Rinjani.</p>
-            </div>
-        </section>
-
-        <!-- Package 10 -->
-        <section id="pkg-10" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">10. Luxury Rinjani Trekking Package</h2>
-            <h3 class="font-bold text-slate-800 mb-2">Itinerary</h3>
-            <div class="space-y-4 text-sm text-slate-700 pl-4 border-l-2 border-primary">
-                <p>Trekking dengan fasilitas premium dan perlengkapan camping terbaik.</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <h3 class="font-bold text-slate-800 text-sm mb-1">SEO Description</h3>
-                <p class="text-xs text-slate-500 italic">Luxury Rinjani Trekking menawarkan pengalaman mendaki Gunung Rinjani dengan kenyamanan maksimal.</p>
-            </div>
-        </section>
-        
-        <div class="text-center mt-12">
-            <a href="index.html" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition shadow-md"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</a>
-        </div>
 
     </main>
 
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'id', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- ==========================================
+         PROFESSIONAL FOOTER
+         ========================================== -->
+    <footer class="bg-slate-900 text-slate-300 pt-20 pb-10 border-t-8 border-emerald-500 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="col-span-1">
+                    <a href="#" class="mb-6 block">
+                        <img src="images/logo.png" alt="Rinjani Excellence Logo" class="h-12 object-contain brightness-0 invert">
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="footer_desc">
+                        Your trusted local partner for safe, eco-friendly, and unforgettable Mount Rinjani trekking adventures in Lombok, Indonesia.
+                    </p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm" data-i18n="footer_links">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-emerald-400 transition">Home</a></li>
+                        <li><a href="index.html#packages" class="hover:text-emerald-400 transition">Trekking Packages</a></li>
+                        <li><a href="articles.html" class="hover:text-emerald-400 transition">Articles & Guides</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="col-span-1 lg:col-span-2">
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm" data-i18n="footer_contact">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-emerald-500"></i>
+                            <span data-i18n="footer_address">Senaru Village, North Lombok, West Nusa Tenggara, Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
+                            <a href="https://wa.me/6285338667377" class="hover:text-white transition">+62 853-3866-7377</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-emerald-500 text-lg"></i>
+                            <a href="mailto:rinjaniexcellent@gmail.com" class="hover:text-white transition">rinjaniexcellent@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; <span id="current-year"></span> Rinjani Excellence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- ==========================================
+         FLOATING CHAT BUBBLE (WhatsApp & Email Expandable)
+         ========================================== -->
+    <div class="fixed bottom-6 right-6 z-[90] flex flex-col items-end gap-3">
+        <!-- Sub-menus (Hidden by default) -->
+        <div id="chat-options" class="flex flex-col items-end gap-3 transition-all duration-300 transform translate-y-4 opacity-0 invisible">
+            <a href="mailto:rinjaniexcellent@gmail.com" class="flex items-center gap-2 bg-slate-800 text-white px-4 py-2 rounded-full shadow-lg hover:bg-sky-600 transition">
+                <span class="text-sm font-bold">Email Us</span>
+                <i class="fa-solid fa-envelope text-lg"></i>
+            </a>
+            <a href="https://wa.me/6285338667377" target="_blank" class="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#1fad55] transition">
+                <span class="text-sm font-bold">WhatsApp</span>
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+            </a>
+        </div>
+        <!-- Main Chat Bubble -->
+        <button onclick="toggleChat()" class="bg-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(14,165,233,0.4)] hover:scale-110 transition-transform duration-300">
+            <i id="chat-icon" class="fa-solid fa-comment-dots text-3xl"></i>
+        </button>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Header & Mobile Menu Logic
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('shadow-md');
+            else header.classList.remove('shadow-md');
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars-staggered');
+            } else {
+                icon.classList.remove('fa-bars-staggered'); icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Floating Chat Logic
+        function toggleChat() {
+            const options = document.getElementById('chat-options');
+            const icon = document.getElementById('chat-icon');
+            if (options.classList.contains('opacity-0')) {
+                options.classList.remove('translate-y-4', 'opacity-0', 'invisible');
+                options.classList.add('translate-y-0', 'opacity-100', 'visible');
+                icon.classList.remove('fa-comment-dots');
+                icon.classList.add('fa-xmark');
+            } else {
+                options.classList.add('translate-y-4', 'opacity-0', 'invisible');
+                options.classList.remove('translate-y-0', 'opacity-100', 'visible');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-comment-dots');
+            }
+        }
+
+        // Multi-Language System (Simple implementation for inner pages)
+        const i18nData = {
+            en: {
+                flag: "🇬🇧", name: "English", code: "en",
+                itin_pre: "Detailed Plans", itin_title: "Trekking Itineraries",
+                itin_subtitle: "Find the perfect journey that matches your time, fitness, and goals.",
+                footer_desc: "Your trusted local partner for safe, eco-friendly, and unforgettable Mount Rinjani trekking adventures.",
+                footer_links: "Quick Links", footer_contact: "Contact Us", footer_address: "Senaru Village, North Lombok, Indonesia"
+            },
+            id: {
+                flag: "🇮🇩", name: "Indonesia", code: "id",
+                itin_pre: "Rencana Detail", itin_title: "Jadwal Pendakian",
+                itin_subtitle: "Temukan perjalanan yang sempurna sesuai waktu dan target Anda.",
+                footer_desc: "Partner lokal terpercaya Anda untuk petualangan Gunung Rinjani yang aman dan ramah lingkungan.",
+                footer_links: "Tautan Cepat", footer_contact: "Hubungi Kami", footer_address: "Desa Senaru, Lombok Utara, Indonesia"
+            }
+        };
+
+        const defaultLang = 'en';
+        let currentLang = localStorage.getItem('rinjani_lang') || defaultLang;
+
+        function renderLanguageLists() {
+            const deskList = document.getElementById('lang-list-desktop');
+            const mobList = document.getElementById('lang-list-mobile');
+            if(!deskList || !mobList) return;
+            deskList.innerHTML = ''; mobList.innerHTML = '';
+
+            for (const [code, lang] of Object.entries(i18nData)) {
+                const liD = document.createElement('li');
+                liD.className = `px-4 py-2 hover:bg-sky-50 cursor-pointer flex items-center gap-3 ${currentLang === code ? 'text-sky-600 font-bold' : 'text-slate-600'}`;
+                liD.innerHTML = `<span>${lang.flag}</span> <span>${lang.name}</span>`;
+                liD.onclick = () => changeLanguage(code);
+                deskList.appendChild(liD);
+
+                const liM = document.createElement('li');
+                liM.className = `px-4 py-3 border-b border-slate-50 hover:bg-sky-50 cursor-pointer flex items-center gap-3 ${currentLang === code ? 'text-sky-600 font-bold' : 'text-slate-600'}`;
+                liM.innerHTML = `<span>${lang.flag}</span> <span>${lang.name}</span>`;
+                liM.onclick = () => { changeLanguage(code); document.getElementById('mobile-lang-menu').classList.remove('opacity-100', 'visible'); document.getElementById('mobile-lang-menu').classList.add('opacity-0', 'invisible'); };
+                mobList.appendChild(liM);
+            }
+        }
+
+        function changeLanguage(langCode) {
+            if (!i18nData[langCode]) langCode = defaultLang;
+            currentLang = langCode;
+            localStorage.setItem('rinjani_lang', currentLang);
+            
+            document.getElementById('current-lang-desktop').innerText = currentLang.toUpperCase();
+            document.getElementById('current-lang-mobile').innerText = currentLang.toUpperCase();
+            document.documentElement.lang = currentLang;
+            
+            renderLanguageLists();
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                let text = i18nData[currentLang][key] || (i18nData['en'] ? i18nData['en'][key] : null);
+                if (text) el.innerHTML = text;
+            });
+        }
+
+        const mobLangBtn = document.getElementById('mobile-lang-btn');
+        if(mobLangBtn) {
+            mobLangBtn.addEventListener('click', () => {
+                const menu = document.getElementById('mobile-lang-menu');
+                if (menu.classList.contains('opacity-0')) {
+                    menu.classList.remove('opacity-0', 'invisible'); menu.classList.add('opacity-100', 'visible');
+                } else {
+                    menu.classList.add('opacity-0', 'invisible'); menu.classList.remove('opacity-100', 'visible');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { changeLanguage(currentLang); });
+    </script>
 </body>
 </html>
