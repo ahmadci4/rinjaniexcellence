@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rinjani Excellence | Premium Mount Rinjani Trekking</title>
-    <meta name="description" content="Experience the best Mount Rinjani trekking with premium service. Unforgettable sunrise, crater lake, and summit views.">
-    
-    <!-- Google Fonts: Inter for clean UI, Playfair Display for premium headings -->
+    <!-- SEO Optimization & High Copyright World Class -->
+    <title>Rinjani Excellence | Premium Mount Rinjani Trekking 2026</title>
+    <meta name="description" content="Experience the best Mount Rinjani trekking with premium service. Unforgettable sunrise, crater lake, and summit views. 2D1N, 3D2N, and 4D3N Packages available.">
+    <meta name="keywords" content="Mount Rinjani Trekking, Rinjani Excellence, Rinjani Tour, Lombok Trekking, Hike Rinjani, Sembalun, Senaru">
+    <meta name="author" content="Rinjani Excellence Tours">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Rinjani Excellence | Premium Mount Rinjani Trekking">
+    <meta property="og:description" content="Join Rinjani Excellence for an unforgettable journey to the summit, crater lake, and hot springs with premium service and expert guides.">
+    <meta property="og:image" content="images/rinjani1.jpeg">
+    <meta property="og:url" content="https://www.rinjaniexcellence.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon / Logo Code for Search Engines and Browser Tabs -->
+    <link rel="icon" type="image/jpeg" href="images/rinjani1.jpeg">
+    <link rel="apple-touch-icon" href="images/rinjani1.jpeg">
+
+    <!-- Schema.org JSON-LD for LocalBusiness / TravelAgency -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Rinjani Excellence",
+      "image": "https://www.rinjaniexcellence.com/images/rinjani1.jpeg",
+      "@id": "",
+      "url": "https://www.rinjaniexcellence.com",
+      "telephone": "+6285338667377",
+      "email": "rinjaniexcellent@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Senaru, Bayan",
+        "addressLocality": "North Lombok",
+        "addressRegion": "West Nusa Tenggara",
+        "postalCode": "83354",
+        "addressCountry": "ID"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -32,7 +68,7 @@
                         serif: ['Playfair Display', 'serif'],
                     },
                     backgroundImage: {
-                        'hero-pattern': "linear-gradient(to right bottom, rgba(0, 180, 216, 0.8), rgba(255, 138, 0, 0.8)), url('https://images.unsplash.com/photo-1598284841961-411bd19bba54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(0, 180, 216, 0.8), rgba(255, 138, 0, 0.8)), url('images/rinjani10.jpeg')",
                     }
                 }
             }
@@ -42,7 +78,7 @@
     <style>
         /* Custom Styles for animations and premium feel */
         .glass {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -61,7 +97,7 @@
             align-items: center;
             font-size: 30px;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
-            z-index: 1000;
+            z-index: 900;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: bounce-slight 2s infinite ease-in-out;
         }
@@ -87,7 +123,6 @@
             transform: translateY(0);
         }
 
-        /* Image hover zoom effect */
         .img-zoom-container {
             overflow: hidden;
         }
@@ -97,16 +132,39 @@
         .img-zoom-container:hover img {
             transform: scale(1.05);
         }
+
+        /* Modal specific styles */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            scrollbar-width: thin;
+            scrollbar-color: #FF8A00 #F3F4F6;
+        }
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+            background: #F3F4F6;
+            border-radius: 4px;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background-color: #FF8A00;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-700 bg-gray-50 antialiased selection:bg-primary selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 glass transition-all duration-300 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="images/rinjani1.jpeg" alt="Logo" class="w-10 h-10 rounded-full mr-3 object-cover shadow-md">
                     <span class="font-serif font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                         Rinjani Excellence
                     </span>
@@ -125,12 +183,11 @@
                         <button onclick="setLang('id')" id="btn-id" class="px-3 py-1 rounded-full text-sm font-medium text-gray-500 hover:text-gray-800 transition-all">ID</button>
                     </div>
                     
-                    <a href="https://wa.me/6285338667377" target="_blank" class="bg-primary hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium shadow-lg shadow-orange-500/30 transition-transform hover:-translate-y-0.5" data-i18n="nav-book">Book Now</a>
+                    <button onclick="openBookingModal('Any Package')" class="bg-primary hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium shadow-lg shadow-orange-500/30 transition-transform hover:-translate-y-0.5" data-i18n="nav-book">Book Now</button>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center space-x-4">
-                     <!-- Mobile Language Switcher -->
                      <div class="flex items-center bg-gray-100 rounded-full p-1">
                         <button onclick="setLang('en')" id="btn-en-mob" class="px-2 py-1 rounded-full text-xs font-bold bg-white shadow-sm text-primary">EN</button>
                         <button onclick="setLang('id')" id="btn-id-mob" class="px-2 py-1 rounded-full text-xs font-medium text-gray-500">ID</button>
@@ -149,6 +206,7 @@
                 <a href="#packages" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-packages">Trekking Packages</a>
                 <a href="#gallery" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-gallery">Gallery</a>
                 <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-contact">Contact</a>
+                <button onclick="openBookingModal('Any Package'); document.getElementById('mobile-menu').classList.add('hidden');" class="block w-full mt-4 px-3 py-3 text-base font-medium bg-primary text-white hover:bg-orange-600 rounded-md" data-i18n="nav-book">Book Now</button>
             </div>
         </div>
     </nav>
@@ -172,14 +230,12 @@
                 <a href="#packages" class="px-8 py-4 bg-primary hover:bg-orange-600 text-white rounded-full font-semibold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-orange-500/40 w-full sm:w-auto" data-i18n="btn-explore">
                     Explore Packages
                 </a>
-                <a href="https://wa.me/6285338667377" target="_blank" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/50 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center w-full sm:w-auto">
-                    <i class="fab fa-whatsapp mr-2 text-green-400"></i>
-                    <span data-i18n="btn-chat">Chat with Us</span>
-                </a>
+                <button onclick="openBookingModal('Custom Package Request')" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/50 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center w-full sm:w-auto">
+                    <i class="fas fa-calendar-check mr-2 text-accent"></i>
+                    <span data-i18n="btn-book">Book Now</span>
+                </button>
             </div>
         </div>
-
-        <!-- Scroll down indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white">
             <i class="fas fa-chevron-down text-2xl opacity-75"></i>
         </div>
@@ -192,11 +248,7 @@
                 <!-- Image Side -->
                 <div class="lg:w-1/2 w-full fade-in-up">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
-                        <!-- Example: src="images/rinjani1.jpeg" -->
                         <img src="images/rinjani1.jpeg" alt="Trekking Rinjani" class="w-full h-auto object-cover rounded-2xl">
-                        
-                        <!-- Floating badge -->
                         <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl glass border-t border-l border-white/50 hidden md:block">
                             <div class="flex items-center space-x-4">
                                 <div class="bg-accent p-3 rounded-full text-white">
@@ -221,7 +273,6 @@
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed" data-i18n="about-desc1">
                         At <strong>Rinjani Excellence</strong>, we don't just offer a trek; we provide a premium, safe, and exhilarating adventure. Our team consists of experienced, English-speaking local guides and porters who are dedicated to making your journey to the second highest volcano in Indonesia truly spectacular.
                     </p>
-                    
                     <ul class="space-y-4 mb-10">
                         <li class="flex items-start">
                             <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
@@ -242,11 +293,6 @@
                             <p class="ml-3 text-gray-700 font-medium" data-i18n="about-point3">Eco-Friendly & Sustainable Trekking Practices</p>
                         </li>
                     </ul>
-
-                    <a href="#packages" class="inline-flex items-center text-primary font-semibold hover:text-orange-600 transition-colors group">
-                        <span data-i18n="btn-view-packages">View Our Packages</span>
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -262,54 +308,52 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Package 1 -->
+                <!-- Package 1: 2D1N -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col fade-in-up">
                     <div class="relative h-64 img-zoom-container">
-                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
-                        <!-- Example: src="images/rinjani2.jpeg" -->
                         <img src="images/rinjani2.jpeg" alt="2 Days 1 Night Summit" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">
-                            Best for Experts
-                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">2 Days 1 Night</h3>
-                        <h4 class="text-primary font-semibold mb-4" data-i18n="pack1-type">Summit Trekker</h4>
-                        <p class="text-gray-600 mb-6 flex-grow" data-i18n="pack1-desc">A challenging and quick trek designed for experienced hikers to conquer the summit.</p>
+                        <h4 class="text-primary font-semibold mb-4">SUMMIT</h4>
+                        <p class="text-gray-600 mb-6 flex-grow text-sm">Mount Rinjani 2 days 1 night trek start from Sembalun to the Sembalun Crater rim, camping tent, climb to summit Rinjani and return to Sembalun village.</p>
                         
-                        <div class="space-y-2 mb-8 border-t border-gray-100 pt-6">
+                        <div class="space-y-2 mb-6 border-t border-gray-100 pt-6">
                             <div class="flex justify-between text-sm">
                                 <span class="text-gray-500"><i class="far fa-clock mr-2"></i>Duration</span>
                                 <span class="font-medium text-gray-900">2D/1N</span>
                             </div>
                             <div class="flex justify-between text-sm">
-                                <span class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Start/End</span>
-                                <span class="font-medium text-gray-900">Sembalun</span>
+                                <span class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Route</span>
+                                <span class="font-medium text-gray-900">Sembalun - Summit</span>
                             </div>
                         </div>
                         
-                        <a href="https://wa.me/6285338667377?text=Hello%20Rinjani%20Excellence,%20I'm%20interested%20in%20the%202D1N%20Summit%20Package." target="_blank" class="block w-full py-3 px-4 bg-gray-50 hover:bg-primary hover:text-white text-primary text-center font-semibold rounded-xl border border-gray-200 transition-colors duration-300" data-i18n="btn-book-pack">
-                            Book This Package
-                        </a>
+                        <div class="flex flex-col space-y-3">
+                            <button onclick="openItineraryModal('modal-2d1n')" class="w-full py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-center font-semibold rounded-xl border border-gray-200 transition-colors duration-300 flex items-center justify-center">
+                                <i class="fas fa-file-alt mr-2 text-secondary"></i> View Itinerary
+                            </button>
+                            <button onclick="openBookingModal('2 Days 1 Night Summit')" class="w-full py-2.5 px-4 bg-primary text-white hover:bg-orange-600 text-center font-semibold rounded-xl shadow-lg transition-colors duration-300">
+                                Book This Package
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Package 2 (Highlighted) -->
+                <!-- Package 2: 3D2N -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-primary transform md:-translate-y-4 flex flex-col relative fade-in-up">
                     <div class="absolute top-0 left-0 w-full bg-primary text-white text-center py-1 text-sm font-bold tracking-wider z-10" data-i18n="pack-popular">
                         MOST POPULAR
                     </div>
                     <div class="relative h-64 mt-6 img-zoom-container">
-                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
-                        <!-- Example: src="images/rinjani3.jpeg" -->
                         <img src="images/rinjani3.jpeg" alt="3 Days 2 Nights Crater Lake" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">3 Days 2 Nights</h3>
-                        <h4 class="text-primary font-semibold mb-4" data-i18n="pack2-type">Summit & Lake</h4>
-                        <p class="text-gray-600 mb-6 flex-grow" data-i18n="pack2-desc">The perfect balance. Experience the summit sunrise, crater lake, and natural hot springs.</p>
+                        <h4 class="text-primary font-semibold mb-4 text-sm leading-tight">Sembalun Crater Rim - Summit, Lake & Hot Spring - Senaru Crater Rim</h4>
+                        <p class="text-gray-600 mb-6 flex-grow text-sm">The perfect balance. Experience the summit sunrise, crater lake, and natural hot springs. Start Sembalun, end Senaru.</p>
                         
-                        <div class="space-y-2 mb-8 border-t border-gray-100 pt-6">
+                        <div class="space-y-2 mb-6 border-t border-gray-100 pt-6">
                             <div class="flex justify-between text-sm">
                                 <span class="text-gray-500"><i class="far fa-clock mr-2"></i>Duration</span>
                                 <span class="font-medium text-gray-900">3D/2N</span>
@@ -320,28 +364,28 @@
                             </div>
                         </div>
                         
-                        <a href="https://wa.me/6285338667377?text=Hello%20Rinjani%20Excellence,%20I'm%20interested%20in%20the%20Popular%203D2N%20Summit%20&%20Lake%20Package." target="_blank" class="block w-full py-3 px-4 bg-primary text-white hover:bg-orange-600 text-center font-semibold rounded-xl shadow-lg shadow-orange-500/30 transition-colors duration-300" data-i18n="btn-book-pack">
-                            Book This Package
-                        </a>
+                        <div class="flex flex-col space-y-3">
+                            <button onclick="openItineraryModal('modal-3d2n')" class="w-full py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-center font-semibold rounded-xl border border-gray-200 transition-colors duration-300 flex items-center justify-center">
+                                <i class="fas fa-file-alt mr-2 text-secondary"></i> View Itinerary
+                            </button>
+                            <button onclick="openBookingModal('3 Days 2 Nights Summit, Lake & Hot Spring')" class="w-full py-2.5 px-4 bg-primary text-white hover:bg-orange-600 text-center font-semibold rounded-xl shadow-lg shadow-orange-500/30 transition-colors duration-300">
+                                Book This Package
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Package 3 -->
+                <!-- Package 3: 4D3N -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col fade-in-up">
                     <div class="relative h-64 img-zoom-container">
-                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
-                        <!-- Example: src="images/rinjani4.jpeg" -->
                         <img src="images/rinjani4.jpeg" alt="4 Days 3 Nights Complete" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">
-                            Relaxing Pace
-                        </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">4 Days 3 Nights</h3>
-                        <h4 class="text-primary font-semibold mb-4" data-i18n="pack3-type">Complete Explorer</h4>
-                        <p class="text-gray-600 mb-6 flex-grow" data-i18n="pack3-desc">Take your time to soak in all the beauty Rinjani has to offer with a more relaxed itinerary.</p>
+                        <h4 class="text-primary font-semibold mb-4 text-sm leading-tight">Sembalun Crater Rim - Summit Lake & Hot spring - Senaru Crater Rim</h4>
+                        <p class="text-gray-600 mb-6 flex-grow text-sm">Take your time to soak in all the beauty Rinjani has to offer with a more relaxed itinerary.</p>
                         
-                        <div class="space-y-2 mb-8 border-t border-gray-100 pt-6">
+                        <div class="space-y-2 mb-6 border-t border-gray-100 pt-6">
                             <div class="flex justify-between text-sm">
                                 <span class="text-gray-500"><i class="far fa-clock mr-2"></i>Duration</span>
                                 <span class="font-medium text-gray-900">4D/3N</span>
@@ -352,19 +396,16 @@
                             </div>
                         </div>
                         
-                        <a href="https://wa.me/6285338667377?text=Hello%20Rinjani%20Excellence,%20I'm%20interested%20in%20the%20Relaxing%204D3N%20Complete%20Package." target="_blank" class="block w-full py-3 px-4 bg-gray-50 hover:bg-primary hover:text-white text-primary text-center font-semibold rounded-xl border border-gray-200 transition-colors duration-300" data-i18n="btn-book-pack">
-                            Book This Package
-                        </a>
+                        <div class="flex flex-col space-y-3">
+                            <button onclick="openItineraryModal('modal-4d3n')" class="w-full py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-center font-semibold rounded-xl border border-gray-200 transition-colors duration-300 flex items-center justify-center">
+                                <i class="fas fa-file-alt mr-2 text-secondary"></i> View Itinerary
+                            </button>
+                            <button onclick="openBookingModal('4 Days 3 Nights Complete')" class="w-full py-2.5 px-4 bg-primary text-white hover:bg-orange-600 text-center font-semibold rounded-xl shadow-lg transition-colors duration-300">
+                                Book This Package
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="mt-12 text-center fade-in-up">
-                <p class="text-gray-500 italic mb-4" data-i18n="custom-pack-desc">Need a custom itinerary or just want to trek to the crater rim?</p>
-                <a href="https://wa.me/6285338667377" target="_blank" class="inline-flex items-center text-secondary font-semibold hover:text-blue-700 transition-colors">
-                    <span data-i18n="btn-custom-pack">Contact us for custom packages</span>
-                    <i class="fas fa-comments ml-2"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -380,9 +421,6 @@
 
             <!-- CSS Grid for Masonry-like layout -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
-                
-                <!-- INSTRUCTION FOR USER: Replace all src below with your local images from folder -->
-                
                 <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden img-zoom-container fade-in-up">
                     <img src="images/rinjani5.jpeg" alt="Gallery Image 5" class="w-full h-full object-cover">
                 </div>
@@ -404,26 +442,20 @@
                     <img src="images/rinjani10.jpeg" alt="Gallery Image 10" class="w-full h-full object-cover">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani1.jpeg" alt="Gallery Image 11" class="w-full h-full object-cover">
+                    <img src="images/rinjani11.jpeg" alt="Gallery Image 11" class="w-full h-full object-cover">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani2.jpeg" alt="Gallery Image 12" class="w-full h-full object-cover">
+                    <img src="images/rinjani12.jpeg" alt="Gallery Image 12" class="w-full h-full object-cover">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani3.jpeg" alt="Gallery Image 13" class="w-full h-full object-cover">
+                    <img src="images/rinjani13.jpeg" alt="Gallery Image 13" class="w-full h-full object-cover">
                 </div>
-
-                <!-- Add more images from your folder (rinjani14.jpeg up to 30) following the structure above -->
-                <!-- You can just copy paste the div blocks and change the text/src -->
             </div>
-            
-           
         </div>
     </section>
 
     <!-- Contact & Footer -->
     <footer id="contact" class="bg-dark text-white pt-20 pb-10 border-t-8 border-primary relative overflow-hidden">
-        <!-- Decorative circle -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -437,7 +469,6 @@
                         Providing top-tier, unforgettable, and eco-friendly trekking experiences on Mount Rinjani. Your safety and satisfaction are our absolute priorities.
                     </p>
                     <div class="flex space-x-4">
-                        <!-- Social Links -->
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
@@ -457,7 +488,6 @@
                         <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-about">About Us</a></li>
                         <li><a href="#packages" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-packages">Packages</a></li>
                         <li><a href="#gallery" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-gallery">Gallery</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors" data-i18n="footer-faq">FAQ</a></li>
                     </ul>
                 </div>
 
@@ -475,7 +505,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope mr-3 text-primary"></i>
-                            <a href="mailto:rinjaniExcellence@gmail.com" class="text-gray-400 hover:text-white transition-colors">rinjaniExcellence@gmail.com</a>
+                            <a href="mailto:rinjaniexcellent@gmail.com" class="text-gray-400 hover:text-white transition-colors">rinjaniexcellent@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -493,6 +523,188 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- ================= MODALS SECTION ================= -->
+    
+    <!-- 1. Booking Form Modal -->
+    <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeBookingModal()"></div>
+        <div class="bg-white rounded-2xl shadow-2xl z-10 w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 relative" id="booking-modal-content">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors z-20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="bg-primary/10 p-6 text-center border-b border-gray-100">
+                <h3 class="text-2xl font-serif font-bold text-gray-900">Book Your Trek</h3>
+                <p class="text-sm text-gray-600 mt-1">Fill out the form below to connect via WhatsApp</p>
+            </div>
+            <form onsubmit="submitBooking(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="b-name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Country of Origin</label>
+                    <input type="text" id="b-country" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow" placeholder="United States">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Select Package</label>
+                    <select id="b-package" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow bg-white">
+                        <option value="2 Days 1 Night Summit">2 Days 1 Night Summit</option>
+                        <option value="3 Days 2 Nights Summit, Lake & Hot Spring">3 Days 2 Nights Summit, Lake & Hot Spring</option>
+                        <option value="4 Days 3 Nights Complete">4 Days 3 Nights Complete</option>
+                        <option value="Custom Package Request">Custom Package / Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center transition-colors">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Send via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Itinerary Modal: 2D1N -->
+    <div id="modal-2d1n" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeItineraryModal('modal-2d1n')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeItineraryModal('modal-2d1n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="p-0">
+                <img src="images/rinjani1.jpeg" alt="2D1N Trek" class="w-full h-64 object-cover">
+            </div>
+            
+            <div class="p-6 sm:p-10 space-y-6 text-gray-700">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 border-b pb-4">MOUNT RINJANI TREKKING 2 DAYS 1 NIGHT SUMMIT</h2>
+                <p>Mount Rinjani 2 days 1 night trek start from Sembalun to the Sembalun Crater rim, camping tent, climb to summit Rinjani and return to Sembalun village in East Lombok.</p>
+                <p>This Hiking Mount Rinjani program is designed for climbers or trekkers in a good level of fitness and able to walk up and down for an average of 8.5 hours per day.</p>
+                
+                <h3 class="text-xl font-bold text-primary mt-8">(Sembalun Village - Sembalun Crater Rim - Summit)</h3>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Arrival Day On Lombok / Day 0:</h4>
+                    <p>We'll pick you up at the Lombok airport or other places on Lombok island and transfer to the hotel in Senaru or Sembalun village (on request). Meet your trekking guide who will provide guidance to better prepare you for the journey, and we will guide you to Sindang Gile waterfall for warming up before trekking Rinjani next day, back to hotel provided, then dinner.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 1:</h4>
+                    <p>Wake up at 06:30 and get breakfast. After that, at 07:00 we will drive you to the village of Sembalun (1100 m) and register at the Rinjani Information Center Office Sembalun. Trekking starts from the village of Sembalun around 8:00 am. We start with a gentle climb through open meadow. After about 2 hours of walking, we will reach Pos 1 (1300m), and another 40 minutes to Pos 2 (1500m). We will continue to Pos 3 (1800m) and have lunch here. After lunch and rest, we will go to Sembalun crater rim (2639m). It takes 3 hours including a prolonged steep climb. We will camp the night on the crater rim. We can enjoy the view of sunrise and sunset.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 2:</h4>
+                    <p>We wake up around 02:00 am under the cover of darkness with a hot drink and a light breakfast. We will start heading to the summit of Rinjani at 03:00 am. We start with a moderate trek, followed by a fairly easy but longer trek. Final approach that involves climbing up steep volcanic scree looser. At 06:00 am, we can reach the summit (3726 m) with a beautiful sunrise, and panoramic view of Lombok island, the island of Bali, the island of Sumbawa and Segara Anak Lake. After that, we will descend into the crater rim Sembalun within 2 hours and have breakfast here. Then will continue to go down to the village of Sembalun, which takes 5 hours to reach down. Car will take us to the village of Senaru (Rinjani Excellence) and we'll transfer to your next destination.</p>
+                </div>
+
+                <div class="mt-8 border-t pt-6 grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-check-circle text-green-500 mr-2"></i> Rate Included:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>A Night At Senaru accommodation</li>
+                            <li>Transport (Pick Up / Drop Off)</li>
+                            <li>Experienced, Friendly, English Speaking Guide</li>
+                            <li>Experienced Local Porter</li>
+                            <li>Camping Equipment & Cooking Gears</li>
+                            <li>Meals (3 Times per Day) & Mineral Water</li>
+                            <li>Trekking Insurance & National Park Entrance Fee</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-times-circle text-red-500 mr-2"></i> Rate Excluded:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Personal day packs</li>
+                            <li>Additional charge for Extra Porter for personal stuff (US$ 30/Day)</li>
+                            <li>Personal medications & toiletries</li>
+                            <li>Trekking shoes, jackets, and other personal clothing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Itinerary Modal: 3D2N -->
+    <div id="modal-3d2n" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeItineraryModal('modal-3d2n')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeItineraryModal('modal-3d2n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="p-0">
+                <img src="images/rinjani2.jpeg" alt="3D2N Trek" class="w-full h-64 object-cover">
+            </div>
+            
+            <div class="p-6 sm:p-10 space-y-6 text-gray-700">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 border-b pb-4">Mount Rinjani Trekking 3 Days 2 Night</h2>
+                <p class="font-semibold text-primary">Sembalun Crater Rim - Summit, Lake & Hot Spring - Senaru Crater Rim</p>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Arrival Day On Lombok Islands</h4>
+                    <p>We provide private pick-up service across Lombok Airport / Central of lombok (Kuta Mandalika, Mataram, Senggigi, etc) or North/East harbors. Transfer to Senaru Village and Check in at the Senaru accommodation with hot/cold water, briefing and free at your leisure time. If your time allowing 3 hours before sunset you can visit the Famous Waterfalls in Senaru area (Sendang Gile and Tiu Kelep).</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 01: The First Day Doing Hiking</h4>
+                    <p>Our guide and driver meet you at Senaru accommodation and will pick you up at lobby at 06.00 am. Then transfer to Sembalun Village by car. Register/check in barcode of the ticket and check up at Rinjani Information Center (RIC) (1,156 m). Guide provides briefing describing the route details. Walk through open grassland used as cattle grazing. Rest at Pos 1 (1,300m), Pos 2 (1,500m), and Pos 3 (1,800m). Ascend to Sembalun Crater Rim (2,639m). Camp overnight and enjoy sunset views.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 02: Summit, Lake & Hot Spring</h4>
+                    <p>Wake up at 02:00 am, have a light breakfast. Begin the challenging 3-hour trek to the Summit (3,726m) for a spectacular sunrise. Return to Sembalun Crater Rim camp for a second breakfast. Proceed down to Segara Anak Lake (2,000m) which takes about 3 hours. Relax and swim at the Natural Hot Springs nearby. After lunch at the lake, leave the lake and climb up to Senaru Crater Rim (2,641m). Camp the second night here and enjoy the magnificent sunset over Mount Agung in Bali.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 03: Descent to Senaru Village</h4>
+                    <p>After breakfast and enjoying the sunrise, we will descend down to Senaru village. The descent takes around 4-5 hours through thick tropical forest where you may spot the rare black monkey. We will arrive at Rinjani Excellence office in Senaru around 1:00 PM. From there, we will transfer you to your next destination in Lombok.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Itinerary Modal: 4D3N -->
+    <div id="modal-4d3n" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeItineraryModal('modal-4d3n')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeItineraryModal('modal-4d3n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="p-0">
+                <img src="images/rinjani3.jpeg" alt="4D3N Trek" class="w-full h-64 object-cover">
+            </div>
+            
+            <div class="p-6 sm:p-10 space-y-6 text-gray-700">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 border-b pb-4">Mount Rinjani Trekking 4 Days 3 Night</h2>
+                <p class="font-semibold text-primary">(Sembalun Crater Rim - Summit Lake & Hot spring - Senaru Crater Rim)</p>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 0:</h4>
+                    <p>Pick up service from any location in Lombok (Airport, Harbors, Mataram, Senggigi, etc) then transfer to Senaru Village and Check in at Senaru Accommodation. Briefing and free at your leisure. If time allowing (3 hours before sunset) you can visit the Famous Waterfalls in Lombok (Sendang Gile and Tiu Kelep).</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 01:</h4>
+                    <p>After Breakfast at 07.00am, transfer to Sembalun village (1.5 hour drive). Register at the Rinjani Information Center (RIC) in Sembalun Lawang (1,156 m), meet your guide and arrange tickets. The trek starts with gentle ascent walking through open grassland. Rest at Pos 1 (1,300m), Pos 2 (1,500 m) and Pos 3 (1,800 m). We ascend to Sembalun Crater Rim (2,639m). Set up camp for the first night and enjoy the spectacular sunset.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 02:</h4>
+                    <p>Wake up at 02:00 am with hot drinks and light breakfast. Climb to the summit (3,726m) taking around 3 hours. Enjoy the breathtaking sunrise. Descend back to camp for breakfast. After resting, we descend to Segara Anak Lake (2,000m) which takes about 3 hours. Camp the second night by the lake. Visit the natural hot springs just a 10-minute walk from the camp to soothe your aching muscles.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 03:</h4>
+                    <p>Enjoy a relaxing morning at the lake. After lunch, leave the lake and climb for 2.5 hours up to Senaru Crater Rim (2,641m). Camp the third night at Senaru Crater Rim. Enjoy the incredible sunset over Mount Agung in Bali and the smoke coming out of the new volcano hole.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-2">Day 04:</h4>
+                    <p>After breakfast and a beautiful sunrise, trek down to Senaru village through the tropical forest. You might see the rare black monkey. The descent takes about 5 hours. The trek ends at Rinjani Trek Center in Senaru around 13:30 (Rinjani Excellence Office). Transfer out to your next destination.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script>
         // --- Navbar Scroll Effect ---
@@ -500,10 +712,10 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 navbar.classList.add('shadow-md');
-                navbar.classList.replace('bg-white/90', 'bg-white/95'); // slightly less transparent on scroll
+                navbar.classList.replace('bg-white/95', 'bg-white/100');
             } else {
                 navbar.classList.remove('shadow-md');
-                navbar.classList.replace('bg-white/95', 'bg-white/90');
+                navbar.classList.replace('bg-white/100', 'bg-white/95');
             }
         });
 
@@ -523,16 +735,7 @@
             }
         });
 
-        // Close mobile menu when clicking a link
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-
-        // --- Intersection Observer for Scroll Animations (Fade in up) ---
+        // --- Intersection Observer (Fade in up) ---
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -543,7 +746,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Run once
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -551,6 +754,70 @@
         document.querySelectorAll('.fade-in-up').forEach((el) => {
             observer.observe(el);
         });
+
+        // --- MODAL LOGIC ---
+        function openItineraryModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            // Slight delay to allow display block to apply before transforming
+            setTimeout(() => {
+                modal.querySelector('.modal-content').classList.remove('scale-95');
+                modal.querySelector('.modal-content').classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeItineraryModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.querySelector('.modal-content').classList.remove('scale-100');
+            modal.querySelector('.modal-content').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 200);
+        }
+
+        function openBookingModal(packageName) {
+            const modal = document.getElementById('booking-modal');
+            const select = document.getElementById('b-package');
+            
+            // Auto-select the package if it exists in the dropdown
+            for(let i=0; i<select.options.length; i++) {
+                if(select.options[i].value === packageName) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('booking-modal-content').classList.remove('scale-95');
+                document.getElementById('booking-modal-content').classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            const content = document.getElementById('booking-modal-content');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                document.getElementById('booking-modal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 200);
+        }
+
+        function submitBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('b-name').value;
+            const country = document.getElementById('b-country').value;
+            const pkg = document.getElementById('b-package').value;
+            
+            const text = `Hello Rinjani Excellence!%0A%0AI would like to book a trek.%0AName: ${name}%0ACountry: ${country}%0APackage: ${pkg}%0A%0APlease let me know the availability.`;
+            
+            window.open(`https://wa.me/6285338667377?text=${text}`, '_blank');
+            closeBookingModal();
+        }
 
         // --- Multi-Language Dictionary ---
         const translations = {
@@ -565,36 +832,24 @@
                 "hero-title2": "Mount Rinjani",
                 "hero-desc": "Join Rinjani Excellence for an unforgettable journey to the summit, crater lake, and hot springs with premium service and expert guides.",
                 "btn-explore": "Explore Packages",
-                "btn-chat": "Chat with Us",
+                "btn-book": "Book Now",
                 "about-subtitle": "Why Choose Us",
                 "about-title1": "Experience Rinjani",
                 "about-title2": "Like Never Before",
-                "about-desc1": "At <strong>Rinjani Excellence</strong>, we don't just offer a trek; we provide a premium, safe, and exhilarating adventure. Our team consists of experienced, English-speaking local guides and porters who are dedicated to making your journey to the second highest volcano in Indonesia truly spectacular.",
+                "about-desc1": "At <strong>Rinjani Excellence</strong>, we don't just offer a trek; we provide a premium, safe, and exhilarating adventure. Our team consists of experienced, English-speaking local guides and porters who are dedicated to making your journey truly spectacular.",
                 "about-rating": "Top Rated Service",
                 "about-point1": "Premium Camping Equipment & Delicious Meals",
                 "about-point2": "Experienced & Certified Local Guides",
                 "about-point3": "Eco-Friendly & Sustainable Trekking Practices",
-                "btn-view-packages": "View Our Packages",
                 "pack-subtitle": "Our Itineraries",
                 "pack-title": "Premium Trekking Packages",
                 "pack-desc": "Choose the adventure that fits your schedule and fitness level. We ensure premium comfort on all our treks.",
-                "pack1-type": "Summit Trekker",
-                "pack1-desc": "A challenging and quick trek designed for experienced hikers to conquer the summit.",
                 "pack-popular": "MOST POPULAR",
-                "pack2-type": "Summit & Lake",
-                "pack2-desc": "The perfect balance. Experience the summit sunrise, crater lake, and natural hot springs.",
-                "pack3-type": "Complete Explorer",
-                "pack3-desc": "Take your time to soak in all the beauty Rinjani has to offer with a more relaxed itinerary.",
-                "btn-book-pack": "Book This Package",
-                "custom-pack-desc": "Need a custom itinerary or just want to trek to the crater rim?",
-                "btn-custom-pack": "Contact us for custom packages",
                 "gallery-subtitle": "Visual Journey",
                 "gallery-title": "Moments on Rinjani",
                 "gallery-desc": "A glimpse of the spectacular views, our premium camping setup, and happy trekkers.",
-            
                 "footer-desc": "Providing top-tier, unforgettable, and eco-friendly trekking experiences on Mount Rinjani. Your safety and satisfaction are our absolute priorities.",
                 "footer-links": "Quick Links",
-                "footer-faq": "FAQ",
                 "footer-contact": "Contact Us"
             },
             id: {
@@ -608,55 +863,38 @@
                 "hero-title2": "Gunung Rinjani",
                 "hero-desc": "Bergabunglah dengan Rinjani Excellence untuk perjalanan tak terlupakan ke puncak, danau kawah, dan pemandian air panas dengan layanan premium dan pemandu ahli.",
                 "btn-explore": "Jelajahi Paket",
-                "btn-chat": "Hubungi Kami",
+                "btn-book": "Pesan Sekarang",
                 "about-subtitle": "Mengapa Memilih Kami",
                 "about-title1": "Jelajahi Rinjani",
                 "about-title2": "Lebih Dari Sebelumnya",
-                "about-desc1": "Di <strong>Rinjani Excellence</strong>, kami tidak sekadar menawarkan pendakian; kami menyajikan petualangan premium, aman, dan mendebarkan. Tim kami terdiri dari pemandu lokal berpengalaman yang berdedikasi untuk membuat perjalanan Anda di gunung berapi tertinggi kedua di Indonesia ini menjadi luar biasa.",
+                "about-desc1": "Di <strong>Rinjani Excellence</strong>, kami tidak sekadar menawarkan pendakian; kami menyajikan petualangan premium, aman, dan mendebarkan. Tim kami terdiri dari pemandu lokal berpengalaman yang berdedikasi untuk membuat perjalanan Anda luar biasa.",
                 "about-rating": "Layanan Terbaik",
                 "about-point1": "Peralatan Kemah Premium & Makanan Lezat",
                 "about-point2": "Pemandu Lokal Berpengalaman & Tersertifikasi",
                 "about-point3": "Praktik Pendakian Ramah Lingkungan",
-                "btn-view-packages": "Lihat Paket Kami",
                 "pack-subtitle": "Jadwal Kami",
                 "pack-title": "Paket Pendakian Premium",
                 "pack-desc": "Pilih petualangan yang sesuai dengan jadwal dan tingkat kebugaran Anda. Kami menjamin kenyamanan ekstra di semua pendakian kami.",
-                "pack1-type": "Penjelajah Puncak",
-                "pack1-desc": "Pendakian yang menantang dan cepat, dirancang khusus untuk pendaki berpengalaman untuk menaklukkan puncak.",
                 "pack-popular": "PALING DIMINATI",
-                "pack2-type": "Puncak & Danau",
-                "pack2-desc": "Keseimbangan sempurna. Nikmati matahari terbit di puncak, keindahan danau kawah, dan pemandian air panas alami.",
-                "pack3-type": "Eksplorasi Lengkap",
-                "pack3-desc": "Luangkan waktu Anda untuk meresapi semua keindahan yang ditawarkan Rinjani dengan jadwal yang lebih santai.",
-                "btn-book-pack": "Pesan Paket Ini",
-                "custom-pack-desc": "Butuh jadwal khusus atau hanya ingin mendaki sampai pelawangan?",
-                "btn-custom-pack": "Hubungi kami untuk paket kustom",
                 "gallery-subtitle": "Perjalanan Visual",
                 "gallery-title": "Momen di Rinjani",
                 "gallery-desc": "Sekilas tentang pemandangan spektakuler, setup kemah premium kami, dan para pendaki yang bahagia.",
-                "gallery-note": "* Catatan admin: Ganti gambar placeholder dengan file lokal (rinjani1.jpeg - rinjani2.jpeg).",
                 "footer-desc": "Memberikan pengalaman pendakian kelas atas, tak terlupakan, dan ramah lingkungan di Gn. Rinjani. Keselamatan dan kepuasan Anda adalah prioritas utama kami.",
                 "footer-links": "Tautan Cepat",
-                "footer-faq": "Tanya Jawab",
                 "footer-contact": "Hubungi Kami"
             }
         };
 
-        // --- Multi-Language Logic ---
         function setLang(lang) {
-            // Update Text content based on data-i18n attribute
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
-                    // Use innerHTML to parse elements like <strong> inside translation strings
                     element.innerHTML = translations[lang][key]; 
                 }
             });
 
-            // Update button styles (Desktop)
             const btnEn = document.getElementById('btn-en');
             const btnId = document.getElementById('btn-id');
-            // Update button styles (Mobile)
             const btnEnMob = document.getElementById('btn-en-mob');
             const btnIdMob = document.getElementById('btn-id-mob');
 
@@ -665,32 +903,19 @@
 
             if (lang === 'en') {
                 document.documentElement.lang = 'en';
-                // Desktop
-                btnEn.classList.add(...activeClass);
-                btnEn.classList.remove(...inactiveClass);
-                btnId.classList.add(...inactiveClass);
-                btnId.classList.remove(...activeClass);
-                // Mobile
-                btnEnMob.classList.add(...activeClass);
-                btnEnMob.classList.remove(...inactiveClass);
-                btnIdMob.classList.add(...inactiveClass);
-                btnIdMob.classList.remove(...activeClass);
+                btnEn.classList.add(...activeClass); btnEn.classList.remove(...inactiveClass);
+                btnId.classList.add(...inactiveClass); btnId.classList.remove(...activeClass);
+                btnEnMob.classList.add(...activeClass); btnEnMob.classList.remove(...inactiveClass);
+                btnIdMob.classList.add(...inactiveClass); btnIdMob.classList.remove(...activeClass);
             } else {
                 document.documentElement.lang = 'id';
-                // Desktop
-                btnId.classList.add(...activeClass);
-                btnId.classList.remove(...inactiveClass);
-                btnEn.classList.add(...inactiveClass);
-                btnEn.classList.remove(...activeClass);
-                // Mobile
-                btnIdMob.classList.add(...activeClass);
-                btnIdMob.classList.remove(...inactiveClass);
-                btnEnMob.classList.add(...inactiveClass);
-                btnEnMob.classList.remove(...activeClass);
+                btnId.classList.add(...activeClass); btnId.classList.remove(...inactiveClass);
+                btnEn.classList.add(...inactiveClass); btnEn.classList.remove(...activeClass);
+                btnIdMob.classList.add(...activeClass); btnIdMob.classList.remove(...inactiveClass);
+                btnEnMob.classList.add(...inactiveClass); btnEnMob.classList.remove(...activeClass);
             }
         }
         
-        // Initialize with English
         setLang('en');
 
     </script>
