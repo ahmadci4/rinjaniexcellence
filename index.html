@@ -133,6 +133,11 @@
             transform: scale(1.05);
         }
 
+        /* Fullscreen Image Cursor */
+        .zoomable-img {
+            cursor: zoom-in;
+        }
+
         /* Modal specific styles */
         .modal-overlay {
             background-color: rgba(0, 0, 0, 0.6);
@@ -172,12 +177,10 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-home">Home</a>
                     <a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-about">About</a>
                     <a href="#packages" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-packages">Packages</a>
-                    <a href="itinerary.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-itinerary">Itinerary</a>
-                    <a href="blog.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-blog">Blog</a>
                     <a href="#gallery" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-gallery">Gallery</a>
+                    <a href="#blog" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-blog">Blog</a>
                     <a href="#contact" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-contact">Contact</a>
                     
                     <!-- Language Switcher -->
@@ -205,12 +208,10 @@
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-1 text-center">
-                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-home">Home</a>
                 <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-about">About</a>
                 <a href="#packages" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-packages">Packages</a>
-                <a href="itinerary.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-itinerary">Itinerary</a>
-                <a href="blog.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-blog">Blog</a>
                 <a href="#gallery" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-gallery">Gallery</a>
+                <a href="#blog" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-blog">Blog</a>
                 <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-contact">Contact</a>
                 <button onclick="openBookingModal('Any Package'); document.getElementById('mobile-menu').classList.add('hidden');" class="block w-full mt-4 px-3 py-3 text-base font-medium bg-primary text-white hover:bg-orange-600 rounded-md" data-i18n="nav-book">Book Now</button>
             </div>
@@ -253,8 +254,8 @@
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <!-- Image Side -->
                 <div class="lg:w-1/2 w-full fade-in-up">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="images/rinjani1.jpeg" alt="Trekking Rinjani" class="w-full h-auto object-cover rounded-2xl">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl img-zoom-container">
+                        <img src="images/rinjani1.jpeg" alt="Trekking Rinjani" class="w-full h-auto object-cover rounded-2xl zoomable-img" onclick="openFullscreenImg(this.src)">
                         <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl glass border-t border-l border-white/50 hidden md:block">
                             <div class="flex items-center space-x-4">
                                 <div class="bg-accent p-3 rounded-full text-white">
@@ -317,7 +318,7 @@
                 <!-- Package 1: 2D1N -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col fade-in-up">
                     <div class="relative h-64 img-zoom-container">
-                        <img src="images/rinjani2.jpeg" alt="2 Days 1 Night Summit" class="w-full h-full object-cover">
+                        <img src="images/rinjani2.jpeg" alt="2 Days 1 Night Summit" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">2 Days 1 Night</h3>
@@ -352,7 +353,7 @@
                         MOST POPULAR
                     </div>
                     <div class="relative h-64 mt-6 img-zoom-container">
-                        <img src="images/rinjani3.jpeg" alt="3 Days 2 Nights Crater Lake" class="w-full h-full object-cover">
+                        <img src="images/3d2n.png" alt="3 Days 2 Nights Crater Lake" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">3 Days 2 Nights</h3>
@@ -384,7 +385,7 @@
                 <!-- Package 3: 4D3N -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col fade-in-up">
                     <div class="relative h-64 img-zoom-container">
-                        <img src="images/rinjani4.jpeg" alt="4 Days 3 Nights Complete" class="w-full h-full object-cover">
+                        <img src="images/rinjani4.jpeg" alt="4 Days 3 Nights Complete" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">4 Days 3 Nights</h3>
@@ -425,37 +426,104 @@
                 <p class="text-lg text-gray-600" data-i18n="gallery-desc">A glimpse of the spectacular views, our premium camping setup, and happy trekkers.</p>
             </div>
 
-            <!-- CSS Grid for Masonry-like layout -->
+            <!-- CSS Grid for Masonry-like layout with randomized 1-10 images -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
                 <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani5.jpeg" alt="Gallery Image 5" class="w-full h-full object-cover">
+                    <img src="images/rinjani5.jpeg" alt="Gallery Image 5" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up" style="transition-delay: 100ms;">
-                    <img src="images/rinjani6.jpeg" alt="Gallery Image 6" class="w-full h-full object-cover">
+                    <img src="images/rinjani6.jpeg" alt="Gallery Image 6" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up" style="transition-delay: 200ms;">
-                    <img src="images/rinjani7.jpeg" alt="Gallery Image 7" class="w-full h-full object-cover">
+                    <img src="images/rinjani7.jpeg" alt="Gallery Image 7" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 <div class="col-span-2 rounded-2xl overflow-hidden img-zoom-container fade-in-up" style="transition-delay: 300ms;">
-                    <img src="images/rinjani8.jpeg" alt="Gallery Image 8" class="w-full h-full object-cover">
+                    <img src="images/rinjani8.jpeg" alt="Gallery Image 8" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 
                 <!-- Second row chunk -->
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani9.jpeg" alt="Gallery Image 9" class="w-full h-full object-cover">
+                    <img src="images/rinjani9.jpeg" alt="Gallery Image 9" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani10.jpeg" alt="Gallery Image 10" class="w-full h-full object-cover">
+                    <img src="images/rinjani10.jpeg" alt="Gallery Image 10" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani11.jpeg" alt="Gallery Image 11" class="w-full h-full object-cover">
+                    <img src="images/rinjani1.jpeg" alt="Gallery Image 1" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani12.jpeg" alt="Gallery Image 12" class="w-full h-full object-cover">
+                    <img src="images/rinjani2.jpeg" alt="Gallery Image 2" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
                 <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
-                    <img src="images/rinjani13.jpeg" alt="Gallery Image 13" class="w-full h-full object-cover">
+                    <img src="images/rinjani3.jpeg" alt="Gallery Image 3" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h3 class="text-secondary font-bold tracking-widest uppercase text-sm mb-2" data-i18n="blog-subtitle">Trekking Guide & News</h3>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6" data-i18n="blog-title">Rinjani Excellence Blog</h2>
+                <p class="text-lg text-gray-600" data-i18n="blog-desc">Everything you need to know before climbing Mount Rinjani, from preparation tips to discovering local flora and fauna.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Blog 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 fade-in-up">
+                    <div class="h-56 img-zoom-container relative">
+                        <img src="images/rinjani4.jpeg" alt="Preparation Guide" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
+                        <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Guide</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i> <span>Oct 15, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-3" data-i18n="blog1-title">Ultimate Preparation Guide for Mount Rinjani</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3" data-i18n="blog1-excerpt">Preparing for Rinjani requires physical fitness and mental readiness. Learn what to pack, how to train, and what our premium service provides so you can travel light.</p>
+                        <button onclick="openBlogModal('blog-modal-1')" class="text-primary font-semibold hover:text-orange-600 flex items-center transition-colors">
+                            <span data-i18n="btn-read">Read More</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="h-56 img-zoom-container relative">
+                        <img src="images/rinjani8.jpeg" alt="Best Time to Hike" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
+                        <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">Tips</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i> <span>Sep 28, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-3" data-i18n="blog2-title">When is the Best Time to Hike Mount Rinjani?</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3" data-i18n="blog2-excerpt">Mount Rinjani National Park is generally closed from January to March due to heavy rain. Discover why April to November is the prime time for spectacular summit views.</p>
+                        <button onclick="openBlogModal('blog-modal-2')" class="text-primary font-semibold hover:text-orange-600 flex items-center transition-colors">
+                            <span data-i18n="btn-read">Read More</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 fade-in-up" style="transition-delay: 200ms;">
+                    <div class="h-56 img-zoom-container relative">
+                        <img src="images/rinjani9.jpeg" alt="Flora and Fauna" class="w-full h-full object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Nature</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i> <span>Aug 12, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-3" data-i18n="blog3-title">Discovering the Flora & Fauna of Rinjani</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3" data-i18n="blog3-excerpt">While trekking through the thick tropical forests of Senaru, you might encounter the rare Ebony Leaf Monkey (Lutung) and various beautiful orchids unique to Lombok.</p>
+                        <button onclick="openBlogModal('blog-modal-3')" class="text-primary font-semibold hover:text-orange-600 flex items-center transition-colors">
+                            <span data-i18n="btn-read">Read More</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -494,6 +562,7 @@
                         <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-about">About Us</a></li>
                         <li><a href="#packages" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-packages">Packages</a></li>
                         <li><a href="#gallery" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-gallery">Gallery</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-blog">Blog</a></li>
                     </ul>
                 </div>
 
@@ -531,11 +600,19 @@
 
     <!-- ================= MODALS SECTION ================= -->
     
+    <!-- 0. Fullscreen Image Modal (Lightbox) -->
+    <div id="image-modal" class="hidden fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm cursor-zoom-out transition-opacity duration-300 opacity-0" onclick="closeFullscreenImg()">
+        <button onclick="closeFullscreenImg()" class="absolute top-6 right-6 text-white hover:text-primary transition-colors z-20">
+            <i class="fas fa-times text-4xl"></i>
+        </button>
+        <img id="fullscreen-img" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transition-transform duration-300 transform scale-95" onclick="event.stopPropagation()">
+    </div>
+
     <!-- 1. Booking Form Modal -->
     <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
-        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeBookingModal()"></div>
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeModal('booking-modal')"></div>
         <div class="bg-white rounded-2xl shadow-2xl z-10 w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 relative" id="booking-modal-content">
-            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors z-20">
+            <button onclick="closeModal('booking-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors z-20">
                 <i class="fas fa-times text-xl"></i>
             </button>
             <div class="bg-primary/10 p-6 text-center border-b border-gray-100">
@@ -568,59 +645,64 @@
     </div>
 
     <!-- 2. Itinerary Modal: 2D1N -->
+    <!-- Note: Content inside is strictly matching the requested PDF text -->
     <div id="modal-2d1n" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeItineraryModal('modal-2d1n')"></div>
-        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
-            <button onclick="closeItineraryModal('modal-2d1n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeModal('modal-2d1n')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-2d1n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
                 <i class="fas fa-times text-xl"></i>
             </button>
-            
-            <div class="p-0">
-                <img src="images/rinjani1.jpeg" alt="2D1N Trek" class="w-full h-64 object-cover">
-            </div>
-            
+            <div class="p-0"><img src="images/rinjani2.jpeg" alt="2D1N Trek" class="w-full h-64 object-cover zoomable-img" onclick="openFullscreenImg(this.src)"></div>
             <div class="p-6 sm:p-10 space-y-6 text-gray-700">
-                <h2 class="text-3xl font-serif font-bold text-gray-900 border-b pb-4">MOUNT RINJANI TREKKING 2 DAYS 1 NIGHT SUMMIT</h2>
+                <h2 class="text-3xl font-serif font-bold text-gray-900 border-b pb-4">MOUNT RINJANI TREKING 2 DAYS 1 NIGHT SUMMIT</h2>
                 <p>Mount Rinjani 2 days 1 night trek start from Sembalun to the Sembalun Crater rim, camping tent, climb to summit Rinjani and return to Sembalun village in East Lombok.</p>
-                <p>This Hiking Mount Rinjani program is designed for climbers or trekkers in a good level of fitness and able to walk up and down for an average of 8.5 hours per day.</p>
+                <p>This Hikking Mount Rinjani program the signt for climbers or trekker in good level of fitness and able to walk up and down for an average of 8.5 hours per day.</p>
+                <h3 class="text-xl font-bold text-primary mt-8">Mount Rinjani Trekking Summit 2 Days 1 Night. <br>(Sembalun Village - Sembalun Crater Rim - Summit)</h3>
                 
-                <h3 class="text-xl font-bold text-primary mt-8">(Sembalun Village - Sembalun Crater Rim - Summit)</h3>
-                
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 mt-4">
                     <h4 class="font-bold text-gray-900 mb-2">Arrival Day On Lombok / Day 0:</h4>
-                    <p>We'll pick you up at the Lombok airport or other places on Lombok island and transfer to the hotel in Senaru or Sembalun village (on request). Meet your trekking guide who will provide guidance to better prepare you for the journey, and we will guide you to Sindang Gile waterfall for warming up before trekking Rinjani next day, back to hotel provided, then dinner.</p>
+                    <p>We'll doing pick you up at the Lombok or other place on Lombok island and transfer to the hotel in Senaru or Sembalun village (on request). Meet Your trekking guide will provide guidance to better prepare you for the journey and we will guide you to Sindang Gile waterfall for warming up before trekking Rinjani next day and back to hotel provided then dinner.</p>
                 </div>
-                
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                     <h4 class="font-bold text-gray-900 mb-2">Day 1:</h4>
-                    <p>Wake up at 06:30 and get breakfast. After that, at 07:00 we will drive you to the village of Sembalun (1100 m) and register at the Rinjani Information Center Office Sembalun. Trekking starts from the village of Sembalun around 8:00 am. We start with a gentle climb through open meadow. After about 2 hours of walking, we will reach Pos 1 (1300m), and another 40 minutes to Pos 2 (1500m). We will continue to Pos 3 (1800m) and have lunch here. After lunch and rest, we will go to Sembalun crater rim (2639m). It takes 3 hours including a prolonged steep climb. We will camp the night on the crater rim. We can enjoy the view of sunrise and sunset.</p>
+                    <p>Wake up at 06:30 and get breakfast. After that, 07:00 we will drive you to the village of Sembalun (1100 m) and register at the Rinjani Information Center Office Sembalun. Trekking start from the village of Sembalun around 8:00 am. We start with a gentle climb through open meadow. After about 2 hours of walking, we will reach the post 1 (1300m), and another 40 minutes to Pos 2 (1500m). We will continue to Pos 3 (1800m) and have lunch here. After lunch and rest, we will go to Sembalun crater rim (2639m). It takes 3 hours including a prolonged steep climb. We will camp the night on the crater rim. We can enjoy the view of sunrise and sunset.</p>
                 </div>
-
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                     <h4 class="font-bold text-gray-900 mb-2">Day 2:</h4>
-                    <p>We wake up around 02:00 am under the cover of darkness with a hot drink and a light breakfast. We will start heading to the summit of Rinjani at 03:00 am. We start with a moderate trek, followed by a fairly easy but longer trek. Final approach that involves climbing up steep volcanic scree looser. At 06:00 am, we can reach the summit (3726 m) with a beautiful sunrise, and panoramic view of Lombok island, the island of Bali, the island of Sumbawa and Segara Anak Lake. After that, we will descend into the crater rim Sembalun within 2 hours and have breakfast here. Then will continue to go down to the village of Sembalun, which takes 5 hours to reach down. Car will take us to the village of Senaru (Rinjani Excellence) and we'll transfer to your next destination.</p>
+                    <p>We wake up around 02:00 am under the cover of darkness with a hot drink and a light breakfast. We will start heading to the summit of Rinjani at 03:00 am. We start with a moderate trek, followed by a fairly easy but longer trek. Final approach that involves climbing up steep volcanic scree looser. At 06:00 am, we can reach the summit (3726 m) with a beautiful sunrise, and panoramic view of Lombok island, the island of Bali, the island of Sumbawa and Segara Anak Lake. After that, we will descend into the crater rim Sembalun within 2 hours and have breakfast here. Then will continue to go down to the village of Sembalun, which takes 5 hours to reach down. Car will take us to the village of Senaru (Rinjani Excellent) and we'll transfer to your the next destination.</p>
                 </div>
 
                 <div class="mt-8 border-t pt-6 grid md:grid-cols-2 gap-6 text-sm">
                     <div>
-                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-check-circle text-green-500 mr-2"></i> Rate Included:</h4>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-check-circle text-green-500 mr-2"></i> What's Rate Included:</h4>
                         <ul class="list-disc pl-5 space-y-1 text-gray-600">
                             <li>A Night At Senaru accommodation</li>
-                            <li>Transport (Pick Up / Drop Off)</li>
-                            <li>Experienced, Friendly, English Speaking Guide</li>
-                            <li>Experienced Local Porter</li>
-                            <li>Camping Equipment & Cooking Gears</li>
-                            <li>Meals (3 Times per Day) & Mineral Water</li>
-                            <li>Trekking Insurance & National Park Entrance Fee</li>
+                            <li>Transport (Pick Up / Drop Off.</li>
+                            <li>Experienced, Friendly, English Speaking Mountain Guide.</li>
+                            <li>Experienced Local Porter.</li>
+                            <li>Camping Equipment.</li>
+                            <li>Cooking Gears.</li>
+                            <li>Meals (3 Times per Day).</li>
+                            <li>Cakes.</li>
+                            <li>Mineral Water 2 bottles per day</li>
+                            <li>Trekking Insurance (Cooperate With National Park).</li>
+                            <li>National Park Entrance Fee (Ticket) an IDR 250.000/each per day (included on holiday)</li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-times-circle text-red-500 mr-2"></i> Rate Excluded:</h4>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-times-circle text-red-500 mr-2"></i> What's Rate Excluded:</h4>
                         <ul class="list-disc pl-5 space-y-1 text-gray-600">
-                            <li>Personal day packs</li>
-                            <li>Additional charge for Extra Porter for personal stuff (US$ 30/Day)</li>
-                            <li>Personal medications & toiletries</li>
-                            <li>Trekking shoes, jackets, and other personal clothing</li>
+                            <li>Day packs Personal stuff to carry by yourself before start climbing?</li>
+                            <li>Additional charge if you need Extra Porter to carry your Personal Stuff along during the trek (US$ 30 a Day) and the rest of your luggage will keep at our storage at the office room.</li>
+                            <li>Torch or Flashlight.</li>
+                            <li>Trekking / Running Shoes / Boots.</li>
+                            <li>2/3 pcs. T-Shirt & 2 pcs. Short.</li>
+                            <li>Sun Block, Lotion, Hat, Cap, Sun Glasses.</li>
+                            <li>Long Pants, Warmest Jacket, Gloves, Warm Hat.</li>
+                            <li>Tiger Balm or Spray For Muscle.</li>
+                            <li>Camera, Toiletries, Insect Repellent, Personal Medication.</li>
+                            <li>Trekking Poles / Stick (Optional).</li>
+                            <li>Sandal & Swimming Suite (Optional).</li>
                         </ul>
                     </div>
                 </div>
@@ -629,83 +711,216 @@
     </div>
 
     <!-- 3. Itinerary Modal: 3D2N -->
+    <!-- Note: Content inside is strictly matching the requested PDF text -->
     <div id="modal-3d2n" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeItineraryModal('modal-3d2n')"></div>
-        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
-            <button onclick="closeItineraryModal('modal-3d2n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeModal('modal-3d2n')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-3d2n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
                 <i class="fas fa-times text-xl"></i>
             </button>
-            
-            <div class="p-0">
-                <img src="images/rinjani2.jpeg" alt="3D2N Trek" class="w-full h-64 object-cover">
-            </div>
-            
+            <div class="p-0"><img src="images/rinjani3.jpeg" alt="3D2N Trek" class="w-full h-64 object-cover zoomable-img" onclick="openFullscreenImg(this.src)"></div>
             <div class="p-6 sm:p-10 space-y-6 text-gray-700">
                 <h2 class="text-3xl font-serif font-bold text-gray-900 border-b pb-4">Mount Rinjani Trekking 3 Days 2 Night</h2>
                 <p class="font-semibold text-primary">Sembalun Crater Rim - Summit, Lake & Hot Spring - Senaru Crater Rim</p>
                 
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 mt-4">
                     <h4 class="font-bold text-gray-900 mb-2">Arrival Day On Lombok Islands</h4>
-                    <p>We provide private pick-up service across Lombok Airport / Central of lombok (Kuta Mandalika, Mataram, Senggigi, etc) or North/East harbors. Transfer to Senaru Village and Check in at the Senaru accommodation with hot/cold water, briefing and free at your leisure time. If your time allowing 3 hours before sunset you can visit the Famous Waterfalls in Senaru area (Sendang Gile and Tiu Kelep).</p>
+                    <p>We provide private pick-up service across Lombok Airport / Central of lombok <br>✓ Kuta Or Mandalika / Central of lombok <br>✓ Lembar Harbor / west of lombok <br>✓ Mataram City / Central of lombok <br>✓ Senggigi Beach / Central of lombok <br>✓ Teluk nare / North of lombok <br>✓ Teluk Kodeq / North of lombok <br>✓ Bangsal / Harbor North of lombok <br>✓ Kayangan / Harbor east of lombok <br>✓ Tete Batu / Central of lombok</p>
+                    <p class="mt-2">And then transfer to Senaru Village and Check in at the Senaru accommodation with hot/cold water, briefing and free at your leisure time. If your time allowing 3 hours before sunset you can visit doing the Famous Waterfall in Senaru area close from your where you stay in Senaru village Sendang Gile and Tiu Kelep Waterfalls</p>
                 </div>
                 
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-gray-900 mb-2">Day 01: The First Day Doing Hiking</h4>
-                    <p>Our guide and driver meet you at Senaru accommodation and will pick you up at lobby at 06.00 am. Then transfer to Sembalun Village by car. Register/check in barcode of the ticket and check up at Rinjani Information Center (RIC) (1,156 m). Guide provides briefing describing the route details. Walk through open grassland used as cattle grazing. Rest at Pos 1 (1,300m), Pos 2 (1,500m), and Pos 3 (1,800m). Ascend to Sembalun Crater Rim (2,639m). Camp overnight and enjoy sunset views.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">The First Day Doing Hiking Trek Itinerary. Day:01</h4>
+                    <p>Our guide and driver meet you at Senaru accommodation and will be pick up you at lobby at 06.00 am. Then transfer to Sembalun Village by the car. And register / check in barcode code of the ticket and check up at office Rinjani Information Center (RIC) in Sembalun Lawang (1,156 m), and your guide and arrange National Park entry tickets. Your guide gives you a briefing describing fews minute the route details, local cultural traditions and what do you might see thing to do and explains rubbish management and safety procedur...</p>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-gray-900 mb-2">Day 02: Summit, Lake & Hot Spring</h4>
-                    <p>Wake up at 02:00 am, have a light breakfast. Begin the challenging 3-hour trek to the Summit (3,726m) for a spectacular sunrise. Return to Sembalun Crater Rim camp for a second breakfast. Proceed down to Segara Anak Lake (2,000m) which takes about 3 hours. Relax and swim at the Natural Hot Springs nearby. After lunch at the lake, leave the lake and climb up to Senaru Crater Rim (2,641m). Camp the second night here and enjoy the magnificent sunset over Mount Agung in Bali.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">MENU ON RINJANI TREK (We Serve Vegetarian Food or Other Dietary Food As Well)</h4>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm mt-4">
+                        <div>
+                            <p class="font-bold">DAY 01</p>
+                            <p class="font-semibold mt-2">LUNCH BREAK:</p>
+                            <ul class="list-disc pl-4 text-gray-600"><li>Fried Chicken Special</li><li>Fried Potatoes</li><li>Fruits Salad</li><li>Mineral Water</li><li>Tea or Coffee</li></ul>
+                            <p class="font-semibold mt-2">DINNER BREAK:</p>
+                            <ul class="list-disc pl-4 text-gray-600"><li>Chicken Curry</li><li>Steam Rice</li><li>Hot Chocolate or Milk</li><li>Tea or Coffee</li></ul>
+                        </div>
+                        <div>
+                            <p class="font-bold">DAY 02</p>
+                            <p class="font-semibold mt-2">BREAKFAST:</p>
+                            <ul class="list-disc pl-4 text-gray-600"><li>Banana or Pineapple Pancake</li><li>Cheese Tomato Sandwich</li><li>Fruits Salad</li><li>Tea/Coffee/Chocolate/Milk/Soft Drink</li></ul>
+                            <p class="font-semibold mt-2">LUNCH BREAK:</p>
+                            <ul class="list-disc pl-4 text-gray-600"><li>Fried Rice Special</li><li>Fruits Salad</li><li>Drinking Mineral Water</li><li>Tea/Coffee/Soft Drink</li></ul>
+                            <p class="font-semibold mt-2">DINNER BREAK:</p>
+                            <ul class="list-disc pl-4 text-gray-600"><li>Noodle Soup</li><li>Fried Potatoe</li><li>Steam Rice</li><li>Soft Drinks/Coffee/Tea</li><li>Fruits Salad</li></ul>
+                        </div>
+                        <div>
+                            <p class="font-bold">DAY 03</p>
+                            <p class="font-semibold mt-2">BREAKFAST:</p>
+                            <ul class="list-disc pl-4 text-gray-600"><li>Banana or Pineapple Pancake</li><li>Sandwich</li><li>Fruits Salad</li><li>Tea/Coffee/Soft Drink</li></ul>
+                            <p class="font-semibold mt-2">LUNCH BREAK:</p>
+                            <ul class="list-disc pl-4 text-gray-600"><li>Fried Noodle Special</li><li>Fruits Salad</li><li>Coffee or Tea / Soft Drink</li></ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-gray-900 mb-2">Day 03: Descent to Senaru Village</h4>
-                    <p>After breakfast and enjoying the sunrise, we will descend down to Senaru village. The descent takes around 4-5 hours through thick tropical forest where you may spot the rare black monkey. We will arrive at Rinjani Excellence office in Senaru around 1:00 PM. From there, we will transfer you to your next destination in Lombok.</p>
+                <div class="mt-8 border-t pt-6 grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i> Personal Stuff to Bring:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Torch or Flashlight.</li>
+                            <li>Trekking / Running Shoes / Boots.</li>
+                            <li>2/3 pcs. T-Shirt & 2 pcs. Short.</li>
+                            <li>Sun Block, Lotion, Hat, Cap, Sun Glasses.</li>
+                            <li>Long Pants, Warmest Jacket, Gloves, Warm Hat.</li>
+                            <li>Tiger Balm or Spray For Muscle.</li>
+                            <li>Camera, Toiletris, Insec Repelent, Personal Medication.</li>
+                            <li>Trekking Poles, Sandal, Swiming Suite, Binocular, Garbage Plastic Can (Optional).</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- 4. Itinerary Modal: 4D3N -->
+    <!-- Note: Content inside is strictly matching the requested PDF text -->
     <div id="modal-4d3n" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeItineraryModal('modal-4d3n')"></div>
-        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
-            <button onclick="closeItineraryModal('modal-4d3n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeModal('modal-4d3n')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-4d3n')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
                 <i class="fas fa-times text-xl"></i>
             </button>
-            
-            <div class="p-0">
-                <img src="images/rinjani3.jpeg" alt="4D3N Trek" class="w-full h-64 object-cover">
-            </div>
-            
+            <div class="p-0"><img src="images/rinjani4.jpeg" alt="4D3N Trek" class="w-full h-64 object-cover zoomable-img" onclick="openFullscreenImg(this.src)"></div>
             <div class="p-6 sm:p-10 space-y-6 text-gray-700">
                 <h2 class="text-3xl font-serif font-bold text-gray-900 border-b pb-4">Mount Rinjani Trekking 4 Days 3 Night</h2>
                 <p class="font-semibold text-primary">(Sembalun Crater Rim - Summit Lake & Hot spring - Senaru Crater Rim)</p>
                 
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 class="text-xl font-bold text-gray-900 mt-8">MOUNT RINJANI TREK ITINERARY:</h3>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 mt-4">
                     <h4 class="font-bold text-gray-900 mb-2">Day 0:</h4>
-                    <p>Pick up service from any location in Lombok (Airport, Harbors, Mataram, Senggigi, etc) then transfer to Senaru Village and Check in at Senaru Accommodation. Briefing and free at your leisure. If time allowing (3 hours before sunset) you can visit the Famous Waterfalls in Lombok (Sendang Gile and Tiu Kelep).</p>
+                    <p>Pick up service (Lombok Airport, Lembar Harbor, Mataram City, Senggigi Beach, Teluk Nare, Teluk Kodeq, Bangsal Harbor, Kayangan Harbor, Tete Batu) then transfer to Senaru Village and Check in at Senaru Accommodation (with hot & cold water, ), briefing and free at your leisure. If time allowing (3 hours before sunset) you can visit the Famous Waterfall in Lombok (Sendang Gile and Tiu Kelep Waterfall.</p>
                 </div>
                 
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                     <h4 class="font-bold text-gray-900 mb-2">Day 01:</h4>
-                    <p>After Breakfast at 07.00am, transfer to Sembalun village (1.5 hour drive). Register at the Rinjani Information Center (RIC) in Sembalun Lawang (1,156 m), meet your guide and arrange tickets. The trek starts with gentle ascent walking through open grassland. Rest at Pos 1 (1,300m), Pos 2 (1,500 m) and Pos 3 (1,800 m). We ascend to Sembalun Crater Rim (2,639m). Set up camp for the first night and enjoy the spectacular sunset.</p>
+                    <p>After Breakfast at 07.00am and transfer to sembalun village, drive for 1.5 hour, Register the Rinjani Information Center (RIC) in Sembalun Lawang (1,156 m), meet your guide and arrange National Park entry tickets and with medical chek. Your guide gives you a briefing describing the route details, local cultural traditions and what you might see, and explains rubbish management and safety procedures. The trek starts from Sembalun Lawang with the gentle ascent walking through open grassland used as cattle grazing by local people. Resting at Pos 1 Pemantauan (1,300), after about three hours from Sembalun we reach Pos 2 Tengengean (1,500 m) enjoying the beautiful views of Mt. Rinjani summit (3,726 m). After another hours ascent to Pos 3 Pada Balong (1,800 m), we start the step 3,5...</p>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-gray-900 mb-2">Day 02:</h4>
-                    <p>Wake up at 02:00 am with hot drinks and light breakfast. Climb to the summit (3,726m) taking around 3 hours. Enjoy the breathtaking sunrise. Descend back to camp for breakfast. After resting, we descend to Segara Anak Lake (2,000m) which takes about 3 hours. Camp the second night by the lake. Visit the natural hot springs just a 10-minute walk from the camp to soothe your aching muscles.</p>
+                    <p>...tree bunut ngengkang that looks like someone standing with their legs apart. After seven hours walk from the rim, (or five hours from Pos 3 Mondokon Lolak), the trek ends at Rinjani Trek Center at the road head in Senaru, Trek end it a round 13:30, (Rinjani Excellent Office) and then Transfer out to your next destination (following tho Spot on Day 0)</p>
                 </div>
 
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-gray-900 mb-2">Day 03:</h4>
-                    <p>Enjoy a relaxing morning at the lake. After lunch, leave the lake and climb for 2.5 hours up to Senaru Crater Rim (2,641m). Camp the third night at Senaru Crater Rim. Enjoy the incredible sunset over Mount Agung in Bali and the smoke coming out of the new volcano hole.</p>
+                <div class="mt-8 border-t pt-6 grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-check-circle text-green-500 mr-2"></i> RATE INCLUSIONS:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>A Night At Senaru accommodation (Hot&Cold Water, Wifi).</li>
+                            <li>Transport (Pick Up / Drop Off)</li>
+                            <li>Experienced, Friendly, English Speaking Mountain Guide.</li>
+                            <li>Experienced Local Porter.</li>
+                            <li>Camping Equipments.</li>
+                            <li>Cooking Gears.</li>
+                            <li>Meals (3 Times A Day).</li>
+                            <li>Fruits & Cakes.</li>
+                            <li>Mineral Water.</li>
+                            <li>Trekking Insurance (Cooperate With National Park).</li>
+                            <li>National Park Entrance Fee</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fas fa-times-circle text-red-500 mr-2"></i> WHAT RATE EXCLUDE</h4>
+                        <p class="font-semibold">PERSONAL STUFF (Trek To Bring):</p>
+                        <p class="text-xs text-gray-500 mb-2">Here you Day Packs Personal (to carry by yourself). Additional charge if you need Extra Porter to carry your Personal Stuff (US$ 25 a Day) and the rest of your luggage will keep at our storage room:</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Torch or Flashlight.</li>
+                            <li>Trekking / Running Shoes / Boots.</li>
+                            <li>2/3 pcs. T-Shirt & 2 pcs. Short.</li>
+                            <li>Sun Block, Lotion, Hat, Cap, Sun Glasses.</li>
+                            <li>Long Pants, Warmest Jacket, Gloves, Warm Hat.</li>
+                            <li>Tiger Balm or Spray For Muscle.</li>
+                            <li>Camera, Toiletries, Insect Repellent, Personal Medication.</li>
+                            <li>Trekking Poles / Stick, Sandal, Swimming Suite, Binocular (Optional).</li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <h4 class="font-bold text-gray-900 mb-2">Day 04:</h4>
-                    <p>After breakfast and a beautiful sunrise, trek down to Senaru village through the tropical forest. You might see the rare black monkey. The descent takes about 5 hours. The trek ends at Rinjani Trek Center in Senaru around 13:30 (Rinjani Excellence Office). Transfer out to your next destination.</p>
+    <!-- 5. Blog Modals -->
+    <div id="blog-modal-1" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeModal('blog-modal-1')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('blog-modal-1')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <img src="images/rinjani4.jpeg" alt="Blog 1" class="w-full h-72 object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
+            <div class="p-8 md:p-12 space-y-6">
+                <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Guide</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900" data-i18n="blog1-title">Ultimate Preparation Guide for Mount Rinjani</h2>
+                <div class="flex items-center text-sm text-gray-500 pb-4 border-b">
+                    <i class="far fa-calendar-alt mr-2"></i> Oct 15, 2025 | By Rinjani Excellence Team
+                </div>
+                <div class="text-gray-700 space-y-4 leading-relaxed text-lg" data-i18n="blog1-full">
+                    <p>Mount Rinjani is the second highest volcano in Indonesia, and reaching its summit is a physically demanding yet incredibly rewarding experience. Proper preparation is the key to enjoying your trek.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Physical Fitness</h3>
+                    <p>We recommend starting cardiovascular exercises (like running, swimming, or cycling) at least one month prior to your hike. Leg strength is crucial, so incorporating stair climbing and squats into your routine will make the steep ascents and descents much more manageable.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Mental Readiness</h3>
+                    <p>The summit push usually begins at 2:00 AM in the freezing cold and involves climbing up volcanic scree where for every two steps you take, you slide one step back. A strong mindset and sheer determination will get you to the top.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Packing Smart</h3>
+                    <p>With Rinjani Excellence, you don't need to worry about heavy gear. We provide premium tents, sleeping bags, and all meals. You only need to pack a daypack with personal essentials: warm layers (it gets to 0°C at the summit!), headlamp, sun protection, good hiking boots, and a camera to capture the majestic views.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blog-modal-2" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeModal('blog-modal-2')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('blog-modal-2')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <img src="images/rinjani8.jpeg" alt="Blog 2" class="w-full h-72 object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
+            <div class="p-8 md:p-12 space-y-6">
+                <span class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Tips</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900" data-i18n="blog2-title">When is the Best Time to Hike Mount Rinjani?</h2>
+                <div class="flex items-center text-sm text-gray-500 pb-4 border-b">
+                    <i class="far fa-calendar-alt mr-2"></i> Sep 28, 2025 | By Rinjani Excellence Team
+                </div>
+                <div class="text-gray-700 space-y-4 leading-relaxed text-lg" data-i18n="blog2-full">
+                    <p>Planning your trip to Lombok? Choosing the right season to hike Mount Rinjani will dramatically impact your experience, from the views you'll get to the safety of the trails.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Dry Season (April - November)</h3>
+                    <p>This is undeniably the best time to hike. Starting from April, the National Park reopens after the monsoon season. The landscape is lush green in April and May, gradually turning drier by September. The clear skies during these months offer the most breathtaking, unobstructed views of Segara Anak Lake, Mount Agung in Bali, and the Milky Way at night.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Shoulder Months (December & March)</h3>
+                    <p>Hiking during these months can be a gamble. You might experience clear mornings followed by heavy afternoon downpours. The trails can be slippery and more challenging. We advise bringing high-quality waterproof gear if you travel during this time.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Closure Period (January - March)</h3>
+                    <p>For the safety of all hikers and to let the ecosystem recover, Mount Rinjani National Park is officially closed during the peak of the rainy season (usually from January 1st to March 31st). No trekking activities are allowed to the crater or summit during this period.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blog-modal-3" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div class="modal-overlay absolute inset-0 transition-opacity" onclick="closeModal('blog-modal-3')"></div>
+        <div class="modal-content bg-white rounded-2xl shadow-2xl z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('blog-modal-3')" class="sticky top-4 right-4 float-right text-gray-500 hover:text-gray-900 bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md z-20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <img src="images/rinjani9.jpeg" alt="Blog 3" class="w-full h-72 object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
+            <div class="p-8 md:p-12 space-y-6">
+                <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Nature</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900" data-i18n="blog3-title">Discovering the Flora & Fauna of Rinjani</h2>
+                <div class="flex items-center text-sm text-gray-500 pb-4 border-b">
+                    <i class="far fa-calendar-alt mr-2"></i> Aug 12, 2025 | By Rinjani Excellence Team
+                </div>
+                <div class="text-gray-700 space-y-4 leading-relaxed text-lg" data-i18n="blog3-full">
+                    <p>Mount Rinjani National Park is a massive ecological reserve covering over 41,000 hectares. As you ascend from the tropical plains to the volcanic peaks, you pass through distinct ecological zones, each with its unique inhabitants.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">The Magical Rainforest of Senaru</h3>
+                    <p>When descending (or ascending) via the Senaru route, you will walk through thick, humid rainforests. Here, giant Banyan trees, wild orchids, and dense ferns dominate. Look up into the canopy, and you might spot the rare and shy Ebony Leaf Monkey (Lutung), distinctive with its long tail and dark fur.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">The Savannah of Sembalun</h3>
+                    <p>The Sembalun trail offers a completely different vibe. It starts with vast, undulating grasslands (savannah) that look like a scene out of a movie. Keep an eye out for Barking Deer (Kijang) and wild pigs that sometimes roam these lower slopes early in the morning.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Alpine Zone & Edelweiss</h3>
+                    <p>As you get closer to the crater rim and summit, the vegetation shrinks to hardy shrubs and alpine flowers. The most famous is the Edelweiss flower (Bunga Abadi), known as the 'eternal flower'. Please remember the hiker's golden rule: take nothing but pictures, leave nothing but footprints. Do not pick the Edelweiss, as it is a protected species vital to the mountain's fragile ecosystem.</p>
                 </div>
             </div>
         </div>
@@ -742,12 +957,7 @@
         });
 
         // --- Intersection Observer (Fade in up) ---
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -761,66 +971,84 @@
             observer.observe(el);
         });
 
-        // --- MODAL LOGIC ---
-        function openItineraryModal(modalId) {
-            const modal = document.getElementById(modalId);
+        // --- FULLSCREEN IMAGE LIGHTBOX LOGIC ---
+        function openFullscreenImg(src) {
+            const modal = document.getElementById('image-modal');
+            const img = document.getElementById('fullscreen-img');
+            img.src = src;
             modal.classList.remove('hidden');
-            // Slight delay to allow display block to apply before transforming
+            
+            // Trigger animation
             setTimeout(() => {
-                modal.querySelector('.modal-content').classList.remove('scale-95');
-                modal.querySelector('.modal-content').classList.add('scale-100');
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+                img.classList.remove('scale-95');
+                img.classList.add('scale-100');
             }, 10);
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
 
-        function closeItineraryModal(modalId) {
+        function closeFullscreenImg() {
+            const modal = document.getElementById('image-modal');
+            const img = document.getElementById('fullscreen-img');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            img.classList.remove('scale-100');
+            img.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                img.src = ''; // clear source
+            }, 300);
+        }
+
+        // --- GENERAL MODAL LOGIC (For Itinerary, Blog, Booking) ---
+        function openModal(modalId) {
             const modal = document.getElementById(modalId);
-            modal.querySelector('.modal-content').classList.remove('scale-100');
-            modal.querySelector('.modal-content').classList.add('scale-95');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                const content = modal.querySelector('.modal-content') || modal.children[1];
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const content = modal.querySelector('.modal-content') || modal.children[1];
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
             setTimeout(() => {
                 modal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
             }, 200);
         }
 
+        function openItineraryModal(modalId) { openModal(modalId); }
+        function openBlogModal(modalId) { openModal(modalId); }
+
         function openBookingModal(packageName) {
-            const modal = document.getElementById('booking-modal');
             const select = document.getElementById('b-package');
-            
-            // Auto-select the package if it exists in the dropdown
             for(let i=0; i<select.options.length; i++) {
                 if(select.options[i].value === packageName) {
                     select.selectedIndex = i;
                     break;
                 }
             }
-            
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                document.getElementById('booking-modal-content').classList.remove('scale-95');
-                document.getElementById('booking-modal-content').classList.add('scale-100');
-            }, 10);
-            document.body.style.overflow = 'hidden';
+            openModal('booking-modal');
         }
 
-        function closeBookingModal() {
-            const content = document.getElementById('booking-modal-content');
-            content.classList.remove('scale-100');
-            content.classList.add('scale-95');
-            setTimeout(() => {
-                document.getElementById('booking-modal').classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }, 200);
-        }
+        function closeBookingModal() { closeModal('booking-modal'); }
 
         function submitBooking(e) {
             e.preventDefault();
             const name = document.getElementById('b-name').value;
             const country = document.getElementById('b-country').value;
             const pkg = document.getElementById('b-package').value;
-            
             const text = `Hello Rinjani Excellence!%0A%0AI would like to book a trek.%0AName: ${name}%0ACountry: ${country}%0APackage: ${pkg}%0A%0APlease let me know the availability.`;
-            
             window.open(`https://wa.me/6285338667377?text=${text}`, '_blank');
             closeBookingModal();
         }
@@ -828,72 +1056,58 @@
         // --- Multi-Language Dictionary ---
         const translations = {
             en: {
-                "nav-home": "Home",
-                "nav-itinerary": "Itinerary",
-                "nav-blog": "Blog",
-                "nav-about": "About",
-                "nav-packages": "Trekking Packages",
-                "nav-gallery": "Gallery",
-                "nav-contact": "Contact",
-                "nav-book": "Book Now",
+                "nav-about": "About", "nav-packages": "Packages", "nav-gallery": "Gallery", "nav-blog": "Blog", "nav-contact": "Contact", "nav-book": "Book Now",
                 "hero-tagline": "Premium Trekking Experience",
-                "hero-title1": "Conquer the Majesty of",
-                "hero-title2": "Mount Rinjani",
+                "hero-title1": "Conquer the Majesty of", "hero-title2": "Mount Rinjani",
                 "hero-desc": "Join Rinjani Excellence for an unforgettable journey to the summit, crater lake, and hot springs with premium service and expert guides.",
-                "btn-explore": "Explore Packages",
-                "btn-book": "Book Now",
-                "about-subtitle": "Why Choose Us",
-                "about-title1": "Experience Rinjani",
-                "about-title2": "Like Never Before",
+                "btn-explore": "Explore Packages", "btn-book": "Book Now",
+                "about-subtitle": "Why Choose Us", "about-title1": "Experience Rinjani", "about-title2": "Like Never Before",
                 "about-desc1": "At <strong>Rinjani Excellence</strong>, we don't just offer a trek; we provide a premium, safe, and exhilarating adventure. Our team consists of experienced, English-speaking local guides and porters who are dedicated to making your journey truly spectacular.",
                 "about-rating": "Top Rated Service",
-                "about-point1": "Premium Camping Equipment & Delicious Meals",
-                "about-point2": "Experienced & Certified Local Guides",
-                "about-point3": "Eco-Friendly & Sustainable Trekking Practices",
-                "pack-subtitle": "Our Itineraries",
-                "pack-title": "Premium Trekking Packages",
-                "pack-desc": "Choose the adventure that fits your schedule and fitness level. We ensure premium comfort on all our treks.",
+                "about-point1": "Premium Camping Equipment & Delicious Meals", "about-point2": "Experienced & Certified Local Guides", "about-point3": "Eco-Friendly & Sustainable Trekking Practices",
+                "pack-subtitle": "Our Itineraries", "pack-title": "Premium Trekking Packages", "pack-desc": "Choose the adventure that fits your schedule and fitness level. We ensure premium comfort on all our treks.",
                 "pack-popular": "MOST POPULAR",
-                "gallery-subtitle": "Visual Journey",
-                "gallery-title": "Moments on Rinjani",
-                "gallery-desc": "A glimpse of the spectacular views, our premium camping setup, and happy trekkers.",
+                "gallery-subtitle": "Visual Journey", "gallery-title": "Moments on Rinjani", "gallery-desc": "A glimpse of the spectacular views, our premium camping setup, and happy trekkers.",
+                "blog-subtitle": "Trekking Guide & News", "blog-title": "Rinjani Excellence Blog", "blog-desc": "Everything you need to know before climbing Mount Rinjani, from preparation tips to discovering local flora and fauna.",
+                "blog1-title": "Ultimate Preparation Guide for Mount Rinjani",
+                "blog1-excerpt": "Preparing for Rinjani requires physical fitness and mental readiness. Learn what to pack, how to train, and what our premium service provides so you can travel light.",
+                "blog1-full": "<p>Mount Rinjani is the second highest volcano in Indonesia, and reaching its summit is a physically demanding yet incredibly rewarding experience. Proper preparation is the key to enjoying your trek.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Physical Fitness</h3><p>We recommend starting cardiovascular exercises (like running, swimming, or cycling) at least one month prior to your hike. Leg strength is crucial, so incorporating stair climbing and squats into your routine will make the steep ascents and descents much more manageable.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Mental Readiness</h3><p>The summit push usually begins at 2:00 AM in the freezing cold and involves climbing up volcanic scree where for every two steps you take, you slide one step back. A strong mindset and sheer determination will get you to the top.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Packing Smart</h3><p>With Rinjani Excellence, you don't need to worry about heavy gear. We provide premium tents, sleeping bags, and all meals. You only need to pack a daypack with personal essentials: warm layers (it gets to 0°C at the summit!), headlamp, sun protection, good hiking boots, and a camera to capture the majestic views.</p>",
+                "blog2-title": "When is the Best Time to Hike Mount Rinjani?",
+                "blog2-excerpt": "Mount Rinjani National Park is generally closed from January to March due to heavy rain. Discover why April to November is the prime time for spectacular summit views.",
+                "blog2-full": "<p>Planning your trip to Lombok? Choosing the right season to hike Mount Rinjani will dramatically impact your experience, from the views you'll get to the safety of the trails.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Dry Season (April - November)</h3><p>This is undeniably the best time to hike. Starting from April, the National Park reopens after the monsoon season. The landscape is lush green in April and May, gradually turning drier by September. The clear skies during these months offer the most breathtaking, unobstructed views of Segara Anak Lake, Mount Agung in Bali, and the Milky Way at night.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Shoulder Months (December & March)</h3><p>Hiking during these months can be a gamble. You might experience clear mornings followed by heavy afternoon downpours. The trails can be slippery and more challenging. We advise bringing high-quality waterproof gear if you travel during this time.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Closure Period (January - March)</h3><p>For the safety of all hikers and to let the ecosystem recover, Mount Rinjani National Park is officially closed during the peak of the rainy season (usually from January 1st to March 31st). No trekking activities are allowed to the crater or summit during this period.</p>",
+                "blog3-title": "Discovering the Flora & Fauna of Rinjani",
+                "blog3-excerpt": "While trekking through the thick tropical forests of Senaru, you might encounter the rare Ebony Leaf Monkey (Lutung) and various beautiful orchids unique to Lombok.",
+                "blog3-full": "<p>Mount Rinjani National Park is a massive ecological reserve covering over 41,000 hectares. As you ascend from the tropical plains to the volcanic peaks, you pass through distinct ecological zones, each with its unique inhabitants.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>The Magical Rainforest of Senaru</h3><p>When descending (or ascending) via the Senaru route, you will walk through thick, humid rainforests. Here, giant Banyan trees, wild orchids, and dense ferns dominate. Look up into the canopy, and you might spot the rare and shy Ebony Leaf Monkey (Lutung), distinctive with its long tail and dark fur.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>The Savannah of Sembalun</h3><p>The Sembalun trail offers a completely different vibe. It starts with vast, undulating grasslands (savannah) that look like a scene out of a movie. Keep an eye out for Barking Deer (Kijang) and wild pigs that sometimes roam these lower slopes early in the morning.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Alpine Zone & Edelweiss</h3><p>As you get closer to the crater rim and summit, the vegetation shrinks to hardy shrubs and alpine flowers. The most famous is the Edelweiss flower (Bunga Abadi), known as the 'eternal flower'. Please remember the hiker's golden rule: take nothing but pictures, leave nothing but footprints. Do not pick the Edelweiss, as it is a protected species vital to the mountain's fragile ecosystem.</p>",
+                "btn-read": "Read More",
                 "footer-desc": "Providing top-tier, unforgettable, and eco-friendly trekking experiences on Mount Rinjani. Your safety and satisfaction are our absolute priorities.",
-                "footer-links": "Quick Links",
-                "footer-contact": "Contact Us"
+                "footer-links": "Quick Links", "footer-contact": "Contact Us"
             },
             id: {
-                "nav-home": "Beranda",
-                "nav-itinerary": "Detail Jadwal",
-                "nav-blog": "Blog",
-                "nav-about": "Tentang Kami",
-                "nav-packages": "Paket Pendakian",
-                "nav-gallery": "Galeri",
-                "nav-contact": "Kontak",
-                "nav-book": "Pesan Sekarang",
+                "nav-about": "Tentang Kami", "nav-packages": "Paket Pendakian", "nav-gallery": "Galeri", "nav-blog": "Blog", "nav-contact": "Kontak", "nav-book": "Pesan Sekarang",
                 "hero-tagline": "Pengalaman Pendakian Premium",
-                "hero-title1": "Taklukkan Kemegahan",
-                "hero-title2": "Gunung Rinjani",
+                "hero-title1": "Taklukkan Kemegahan", "hero-title2": "Gunung Rinjani",
                 "hero-desc": "Bergabunglah dengan Rinjani Excellence untuk perjalanan tak terlupakan ke puncak, danau kawah, dan pemandian air panas dengan layanan premium dan pemandu ahli.",
-                "btn-explore": "Jelajahi Paket",
-                "btn-book": "Pesan Sekarang",
-                "about-subtitle": "Mengapa Memilih Kami",
-                "about-title1": "Jelajahi Rinjani",
-                "about-title2": "Lebih Dari Sebelumnya",
+                "btn-explore": "Jelajahi Paket", "btn-book": "Pesan Sekarang",
+                "about-subtitle": "Mengapa Memilih Kami", "about-title1": "Jelajahi Rinjani", "about-title2": "Lebih Dari Sebelumnya",
                 "about-desc1": "Di <strong>Rinjani Excellence</strong>, kami tidak sekadar menawarkan pendakian; kami menyajikan petualangan premium, aman, dan mendebarkan. Tim kami terdiri dari pemandu lokal berpengalaman yang berdedikasi untuk membuat perjalanan Anda luar biasa.",
                 "about-rating": "Layanan Terbaik",
-                "about-point1": "Peralatan Kemah Premium & Makanan Lezat",
-                "about-point2": "Pemandu Lokal Berpengalaman & Tersertifikasi",
-                "about-point3": "Praktik Pendakian Ramah Lingkungan",
-                "pack-subtitle": "Jadwal Kami",
-                "pack-title": "Paket Pendakian Premium",
-                "pack-desc": "Pilih petualangan yang sesuai dengan jadwal dan tingkat kebugaran Anda. Kami menjamin kenyamanan ekstra di semua pendakian kami.",
+                "about-point1": "Peralatan Kemah Premium & Makanan Lezat", "about-point2": "Pemandu Lokal Berpengalaman & Tersertifikasi", "about-point3": "Praktik Pendakian Ramah Lingkungan",
+                "pack-subtitle": "Jadwal Kami", "pack-title": "Paket Pendakian Premium", "pack-desc": "Pilih petualangan yang sesuai dengan jadwal dan tingkat kebugaran Anda. Kami menjamin kenyamanan ekstra di semua pendakian kami.",
                 "pack-popular": "PALING DIMINATI",
-                "gallery-subtitle": "Perjalanan Visual",
-                "gallery-title": "Momen di Rinjani",
-                "gallery-desc": "Sekilas tentang pemandangan spektakuler, setup kemah premium kami, dan para pendaki yang bahagia.",
+                "gallery-subtitle": "Perjalanan Visual", "gallery-title": "Momen di Rinjani", "gallery-desc": "Sekilas tentang pemandangan spektakuler, setup kemah premium kami, dan para pendaki yang bahagia.",
+                "blog-subtitle": "Panduan & Berita Pendakian", "blog-title": "Blog Rinjani Excellence", "blog-desc": "Semua yang perlu Anda ketahui sebelum mendaki Gunung Rinjani, mulai dari tips persiapan hingga keindahan flora dan fauna lokal.",
+                "blog1-title": "Panduan Persiapan Lengkap Mendaki Rinjani",
+                "blog1-excerpt": "Mendaki Rinjani membutuhkan kebugaran fisik dan mental. Pelajari barang bawaan wajib, cara berlatih, dan fasilitas premium kami yang akan meringankan beban Anda.",
+                "blog1-full": "<p>Gunung Rinjani adalah gunung berapi tertinggi kedua di Indonesia, dan mencapai puncaknya adalah pengalaman yang menuntut fisik namun sangat memuaskan. Persiapan yang tepat adalah kunci.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Kebugaran Fisik</h3><p>Kami menyarankan Anda untuk memulai latihan kardiovaskular (seperti berlari, berenang, atau bersepeda) setidaknya satu bulan sebelum pendakian. Kekuatan kaki sangat penting, jadi gabungkan latihan naik tangga dan squat agar lebih mudah saat tanjakan dan turunan curam.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Kesiapan Mental</h3><p>Perjalanan menuju puncak biasanya dimulai pada pukul 2:00 pagi dalam cuaca yang sangat dingin dan melewati kerikil vulkanik di mana setiap dua langkah, Anda bisa merosot satu langkah. Pola pikir yang kuat dan tekad adalah yang akan membawa Anda ke puncak.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Berkemas Cerdas</h3><p>Bersama Rinjani Excellence, Anda tidak perlu khawatir tentang beban berat. Kami menyediakan tenda premium, kantong tidur, dan semua makanan. Anda hanya perlu membawa daypack dengan barang pribadi: pakaian hangat (suhu bisa mencapai 0°C di puncak!), headlamp, pelindung matahari, sepatu hiking yang bagus, dan kamera.</p>",
+                "blog2-title": "Kapan Waktu Terbaik Mendaki Rinjani?",
+                "blog2-excerpt": "Taman Nasional ditutup dari Januari hingga Maret karena musim hujan. Ketahui alasan mengapa April hingga November adalah waktu terbaik untuk pemandangan puncak yang cerah.",
+                "blog2-full": "<p>Merencanakan perjalanan ke Lombok? Memilih musim yang tepat untuk mendaki Gunung Rinjani akan sangat memengaruhi pengalaman Anda, mulai dari pemandangan yang didapat hingga keamanan jalur.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Musim Kemarau (April - November)</h3><p>Ini adalah waktu terbaik untuk mendaki. Mulai bulan April, Taman Nasional dibuka kembali setelah musim hujan. Pemandangan sangat hijau di bulan April dan Mei, lalu perlahan mengering hingga September. Langit yang cerah pada bulan-bulan ini menawarkan pemandangan terbaik ke Danau Segara Anak, Gunung Agung di Bali, dan Bima Sakti di malam hari.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Musim Peralihan (Desember & Maret)</h3><p>Mendaki di bulan-bulan ini bisa menjadi pertaruhan. Anda mungkin mendapatkan pagi yang cerah diikuti oleh hujan lebat di sore hari. Jalur pendakian bisa menjadi licin dan lebih menantang. Kami sangat menyarankan membawa jas hujan berkualitas tinggi jika mendaki pada waktu ini.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Periode Penutupan (Januari - Maret)</h3><p>Demi keamanan seluruh pendaki dan untuk membiarkan ekosistem pulih, Taman Nasional Gunung Rinjani resmi ditutup selama puncak musim hujan (biasanya dari 1 Januari hingga 31 Maret). Tidak ada aktivitas pendakian yang diizinkan selama periode ini.</p>",
+                "blog3-title": "Mengenal Flora & Fauna di Gunung Rinjani",
+                "blog3-excerpt": "Saat mendaki melalui hutan tropis lebat di Senaru, Anda mungkin menjumpai Lutung Hitam langka dan beragam anggrek cantik khas hutan Lombok.",
+                "blog3-full": "<p>Taman Nasional Gunung Rinjani adalah kawasan ekologi raksasa seluas lebih dari 41.000 hektar. Saat Anda naik dari dataran tropis ke puncak vulkanik, Anda akan melewati zona ekologi yang berbeda, masing-masing dengan penghuninya yang unik.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Hutan Hujan Magis Senaru</h3><p>Saat turun (atau naik) melalui jalur Senaru, Anda akan berjalan melintasi hutan hujan yang lebat dan lembap. Di sini, pohon Beringin raksasa, anggrek liar, dan pakis mendominasi. Tataplah kanopi hutan, dan Anda mungkin melihat Lutung Hitam (Monyet Daun Eboni) yang langka dan pemalu.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Sabana Sembalun</h3><p>Jalur Sembalun menawarkan nuansa yang sama sekali berbeda. Jalur ini dimulai dengan padang rumput bergelombang yang luas (sabana) yang terlihat seperti adegan dalam film. Perhatikan Kijang dan babi hutan yang kadang berkeliaran di lereng bawah ini pada pagi hari.</p><h3 class='text-2xl font-bold text-gray-900 mt-6'>Zona Alpina & Edelweiss</h3><p>Saat Anda semakin dekat ke tepi kawah dan puncak, vegetasi menyusut menjadi semak belukar yang tangguh dan bunga-bunga alpine. Yang paling terkenal adalah bunga Edelweiss (Bunga Abadi). Mohon ingat aturan emas pendaki: jangan mengambil apapun selain foto, jangan tinggalkan apapun selain jejak kaki. Dilarang memetik Edelweiss, karena ini adalah spesies yang dilindungi.</p>",
+                "btn-read": "Baca Selengkapnya",
                 "footer-desc": "Memberikan pengalaman pendakian kelas atas, tak terlupakan, dan ramah lingkungan di Gn. Rinjani. Keselamatan dan kepuasan Anda adalah prioritas utama kami.",
-                "footer-links": "Tautan Cepat",
-                "footer-contact": "Hubungi Kami"
+                "footer-links": "Tautan Cepat", "footer-contact": "Hubungi Kami"
             }
         };
 
@@ -929,7 +1143,6 @@
         }
         
         setLang('en');
-
     </script>
 </body>
 </html>
