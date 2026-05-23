@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimization & High Copyright World Class -->
+    <title>Blog & Guide | Rinjani Excellence Trekking 2026</title>
+    <meta name="description" content="Read the latest news, guides, and tips for trekking Mount Rinjani. Learn about preparation, best times to hike, and the beautiful flora and fauna of Lombok.">
+    <meta name="keywords" content="Rinjani Blog, Rinjani Trekking Guide, Mount Rinjani Tips, Hiking Preparation, Lombok Travel Blog">
+    <meta name="author" content="Rinjani Excellence Tours">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Blog & Guide | Rinjani Excellence Trekking">
+    <meta property="og:description" content="Get the best tips and preparation guides for your Mount Rinjani adventure with Rinjani Excellence.">
+    <meta property="og:image" content="images/rinjani14.jpeg">
+    <meta property="og:url" content="https://www.rinjaniexcellence.com/blog.html">
+
+    <!-- Favicon / Logo Code for Search Engines and Browser Tabs -->
+    <link rel="icon" type="image/jpeg" href="images/rinjani1.jpeg">
+    <link rel="apple-touch-icon" href="images/rinjani1.jpeg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF8A00',
+                        secondary: '#00B4D8',
+                        accent: '#FFB703',
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+        .img-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center">
+                    <img src="images/rinjani1.jpeg" alt="Logo" class="w-10 h-10 rounded-full mr-3 object-cover shadow-md">
+                    <span class="font-serif font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        Rinjani Excellence
+                    </span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-home">Home</a>
+                    <a href="itinerary.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-itinerary">Itinerary</a>
+                    <a href="blog.html" class="text-primary font-bold transition-colors" data-i18n="nav-blog">Blog</a>
+                    
+                    <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
+                        <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-full text-sm font-bold bg-white shadow-sm text-primary">EN</button>
+                        <button onclick="setLang('id')" id="btn-id" class="px-3 py-1 rounded-full text-sm font-medium text-gray-500">ID</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+            <h3 class="text-secondary font-bold tracking-widest uppercase text-sm mb-2" data-i18n="blog-subtitle">Trekking Guide & News</h3>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6" data-i18n="blog-title">Rinjani Excellence Blog</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="blog-desc">Everything you need to know before climbing Mount Rinjani, from preparation tips to discovering local flora and fauna.</p>
+        </div>
+    </header>
+
+    <!-- Blog Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 fade-in-up">
+                    <div class="h-56 img-hover-zoom relative">
+                        <img src="images/rinjani14.jpeg" alt="Preparation Guide" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Guide</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i> <span>Oct 15, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-3" data-i18n="blog1-title">Ultimate Preparation Guide for Mount Rinjani</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3" data-i18n="blog1-excerpt">Preparing for Rinjani requires physical fitness and mental readiness. Learn what to pack, how to train, and what our premium service provides so you can travel light.</p>
+                        <a href="#" class="text-primary font-semibold hover:text-orange-600 flex items-center transition-colors">
+                            <span data-i18n="btn-read">Read More</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="h-56 img-hover-zoom relative">
+                        <img src="images/rinjani15.jpeg" alt="Best Time to Hike" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">Tips</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i> <span>Sep 28, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-3" data-i18n="blog2-title">When is the Best Time to Hike Mount Rinjani?</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3" data-i18n="blog2-excerpt">Mount Rinjani National Park is generally closed from January to March due to heavy rain. Discover why April to November is the prime time for spectacular summit views.</p>
+                        <a href="#" class="text-primary font-semibold hover:text-orange-600 flex items-center transition-colors">
+                            <span data-i18n="btn-read">Read More</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 fade-in-up" style="transition-delay: 200ms;">
+                    <div class="h-56 img-hover-zoom relative">
+                        <img src="images/rinjani16.jpeg" alt="Flora and Fauna" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Nature</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i> <span>Aug 12, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 mb-3" data-i18n="blog3-title">Discovering the Flora & Fauna of Rinjani</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3" data-i18n="blog3-excerpt">While trekking through the thick tropical forests of Senaru, you might encounter the rare Ebony Leaf Monkey (Lutung) and various beautiful orchids unique to Lombok.</p>
+                        <a href="#" class="text-primary font-semibold hover:text-orange-600 flex items-center transition-colors">
+                            <span data-i18n="btn-read">Read More</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="bg-dark text-white py-10 border-t-8 border-primary">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="font-serif font-bold text-2xl text-primary inline-block mb-4">Rinjani Excellence</span>
+            <p class="text-gray-500 text-sm mb-4">© 2026 Rinjani Excellence Tours. All rights reserved.</p>
+            <a href="index.html" class="text-secondary hover:text-white transition-colors">Back to Main Website</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // Translation Dictionary for Blog
+        const translations = {
+            en: {
+                "nav-home": "Home", "nav-itinerary": "Itinerary", "nav-blog": "Blog",
+                "blog-subtitle": "Trekking Guide & News",
+                "blog-title": "Rinjani Excellence Blog",
+                "blog-desc": "Everything you need to know before climbing Mount Rinjani, from preparation tips to discovering local flora and fauna.",
+                "blog1-title": "Ultimate Preparation Guide for Mount Rinjani",
+                "blog1-excerpt": "Preparing for Rinjani requires physical fitness and mental readiness. Learn what to pack, how to train, and what our premium service provides so you can travel light.",
+                "blog2-title": "When is the Best Time to Hike Mount Rinjani?",
+                "blog2-excerpt": "Mount Rinjani National Park is generally closed from January to March due to heavy rain. Discover why April to November is the prime time for spectacular summit views.",
+                "blog3-title": "Discovering the Flora & Fauna of Rinjani",
+                "blog3-excerpt": "While trekking through the thick tropical forests of Senaru, you might encounter the rare Ebony Leaf Monkey (Lutung) and various beautiful orchids unique to Lombok.",
+                "btn-read": "Read More"
+            },
+            id: {
+                "nav-home": "Beranda", "nav-itinerary": "Jadwal Perjalanan", "nav-blog": "Blog",
+                "blog-subtitle": "Panduan & Berita Pendakian",
+                "blog-title": "Blog Rinjani Excellence",
+                "blog-desc": "Semua yang perlu Anda ketahui sebelum mendaki Gunung Rinjani, mulai dari tips persiapan hingga keindahan flora dan fauna lokal.",
+                "blog1-title": "Panduan Persiapan Lengkap Mendaki Rinjani",
+                "blog1-excerpt": "Mendaki Rinjani membutuhkan kebugaran fisik dan mental. Pelajari barang bawaan wajib, cara berlatih, dan fasilitas premium kami yang akan meringankan beban Anda.",
+                "blog2-title": "Kapan Waktu Terbaik Mendaki Rinjani?",
+                "blog2-excerpt": "Taman Nasional ditutup dari Januari hingga Maret karena musim hujan. Ketahui alasan mengapa April hingga November adalah waktu terbaik untuk pemandangan puncak yang cerah.",
+                "blog3-title": "Mengenal Flora & Fauna di Gunung Rinjani",
+                "blog3-excerpt": "Saat mendaki melalui hutan tropis lebat di Senaru, Anda mungkin menjumpai Lutung Hitam langka dan beragam anggrek cantik khas hutan Lombok.",
+                "btn-read": "Baca Selengkapnya"
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+            const btnEn = document.getElementById('btn-en');
+            const btnId = document.getElementById('btn-id');
+            const active = ['bg-white','shadow-sm','text-primary','font-bold'];
+            const inactive = ['text-gray-500','font-medium','hover:text-gray-800','bg-transparent'];
+            if(lang==='en'){
+                btnEn.classList.add(...active); btnEn.classList.remove(...inactive);
+                btnId.classList.add(...inactive); btnId.classList.remove(...active);
+            }else{
+                btnId.classList.add(...active); btnId.classList.remove(...inactive);
+                btnEn.classList.add(...inactive); btnEn.classList.remove(...active);
+            }
+        }
+        setLang('en');
+    </script>
+</body>
+</html>
