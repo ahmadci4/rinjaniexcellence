@@ -172,8 +172,11 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-home">Home</a>
                     <a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-about">About</a>
-                    <a href="#packages" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-packages">Trekking Packages</a>
+                    <a href="#packages" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-packages">Packages</a>
+                    <a href="itinerary.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-itinerary">Itinerary</a>
+                    <a href="blog.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-blog">Blog</a>
                     <a href="#gallery" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-gallery">Gallery</a>
                     <a href="#contact" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-contact">Contact</a>
                     
@@ -202,8 +205,11 @@
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-home">Home</a>
                 <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-about">About</a>
-                <a href="#packages" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-packages">Trekking Packages</a>
+                <a href="#packages" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-packages">Packages</a>
+                <a href="itinerary.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-itinerary">Itinerary</a>
+                <a href="blog.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-blog">Blog</a>
                 <a href="#gallery" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-gallery">Gallery</a>
                 <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-contact">Contact</a>
                 <button onclick="openBookingModal('Any Package'); document.getElementById('mobile-menu').classList.add('hidden');" class="block w-full mt-4 px-3 py-3 text-base font-medium bg-primary text-white hover:bg-orange-600 rounded-md" data-i18n="nav-book">Book Now</button>
@@ -822,6 +828,9 @@
         // --- Multi-Language Dictionary ---
         const translations = {
             en: {
+                "nav-home": "Home",
+                "nav-itinerary": "Itinerary",
+                "nav-blog": "Blog",
                 "nav-about": "About",
                 "nav-packages": "Trekking Packages",
                 "nav-gallery": "Gallery",
@@ -853,6 +862,9 @@
                 "footer-contact": "Contact Us"
             },
             id: {
+                "nav-home": "Beranda",
+                "nav-itinerary": "Detail Jadwal",
+                "nav-blog": "Blog",
                 "nav-about": "Tentang Kami",
                 "nav-packages": "Paket Pendakian",
                 "nav-gallery": "Galeri",
