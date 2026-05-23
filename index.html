@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinjani Excellent | Premium Mount Rinjani Trekking</title>
+    <meta name="description" content="Experience the best Mount Rinjani trekking with premium service. Unforgettable sunrise, crater lake, and summit views.">
+    
+    <!-- Google Fonts: Inter for clean UI, Playfair Display for premium headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF8A00', // Cheerful Orange
+                        secondary: '#00B4D8', // Bright Blue (Sky/Lake)
+                        accent: '#FFB703', // Yellow Sun
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(0, 180, 216, 0.8), rgba(255, 138, 0, 0.8)), url('https://images.unsplash.com/photo-1598284841961-411bd19bba54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for animations and premium feel */
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: bounce-slight 2s infinite ease-in-out;
+        }
+        
+        .floating-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes bounce-slight {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image hover zoom effect */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom-container img {
+            transition: transform 0.5s ease;
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="font-serif font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        Rinjani Excellent
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-about">About</a>
+                    <a href="#packages" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-packages">Trekking Packages</a>
+                    <a href="#gallery" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-gallery">Gallery</a>
+                    <a href="#contact" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
+                        <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-full text-sm font-bold bg-white shadow-sm text-primary transition-all">EN</button>
+                        <button onclick="setLang('id')" id="btn-id" class="px-3 py-1 rounded-full text-sm font-medium text-gray-500 hover:text-gray-800 transition-all">ID</button>
+                    </div>
+                    
+                    <a href="https://wa.me/6285338667377" target="_blank" class="bg-primary hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium shadow-lg shadow-orange-500/30 transition-transform hover:-translate-y-0.5" data-i18n="nav-book">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-4">
+                     <!-- Mobile Language Switcher -->
+                     <div class="flex items-center bg-gray-100 rounded-full p-1">
+                        <button onclick="setLang('en')" id="btn-en-mob" class="px-2 py-1 rounded-full text-xs font-bold bg-white shadow-sm text-primary">EN</button>
+                        <button onclick="setLang('id')" id="btn-id-mob" class="px-2 py-1 rounded-full text-xs font-medium text-gray-500">ID</button>
+                    </div>
+                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-about">About</a>
+                <a href="#packages" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-packages">Trekking Packages</a>
+                <a href="#gallery" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-gallery">Gallery</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-hero-pattern bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/60"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto fade-in-up">
+            <span class="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm font-semibold mb-6 uppercase tracking-wider" data-i18n="hero-tagline">
+                Premium Trekking Experience
+            </span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                <span data-i18n="hero-title1">Conquer the Majesty of</span> <br />
+                <span class="text-accent" data-i18n="hero-title2">Mount Rinjani</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-100 mb-10 max-w-2xl mx-auto font-light drop-shadow-md" data-i18n="hero-desc">
+                Join Rinjani Excellent for an unforgettable journey to the summit, crater lake, and hot springs with premium service and expert guides.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#packages" class="px-8 py-4 bg-primary hover:bg-orange-600 text-white rounded-full font-semibold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-orange-500/40 w-full sm:w-auto" data-i18n="btn-explore">
+                    Explore Packages
+                </a>
+                <a href="https://wa.me/6285338667377" target="_blank" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/50 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center w-full sm:w-auto">
+                    <i class="fab fa-whatsapp mr-2 text-green-400"></i>
+                    <span data-i18n="btn-chat">Chat with Us</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white">
+            <i class="fas fa-chevron-down text-2xl opacity-75"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image Side -->
+                <div class="lg:w-1/2 w-full fade-in-up">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
+                        <!-- Example: src="images/rinjani1.jpeg" -->
+                        <img src="https://placehold.co/800x1000/00B4D8/ffffff?text=Replace+with+rinjani1.jpeg" alt="Trekking Rinjani" class="w-full h-auto object-cover rounded-2xl">
+                        
+                        <!-- Floating badge -->
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl glass border-t border-l border-white/50 hidden md:block">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-accent p-3 rounded-full text-white">
+                                    <i class="fas fa-star text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-gray-800">5.0</p>
+                                    <p class="text-sm text-gray-500 font-medium" data-i18n="about-rating">Top Rated Service</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="lg:w-1/2 w-full fade-in-up">
+                    <h3 class="text-secondary font-bold tracking-widest uppercase text-sm mb-2" data-i18n="about-subtitle">Why Choose Us</h3>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+                        <span data-i18n="about-title1">Experience Rinjani</span> <br/>
+                        <span class="text-primary" data-i18n="about-title2">Like Never Before</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed" data-i18n="about-desc1">
+                        At <strong>Rinjani Excellent</strong>, we don't just offer a trek; we provide a premium, safe, and exhilarating adventure. Our team consists of experienced, English-speaking local guides and porters who are dedicated to making your journey to the second highest volcano in Indonesia truly spectacular.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <p class="ml-3 text-gray-700 font-medium" data-i18n="about-point1">Premium Camping Equipment & Delicious Meals</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <p class="ml-3 text-gray-700 font-medium" data-i18n="about-point2">Experienced & Certified Local Guides</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <p class="ml-3 text-gray-700 font-medium" data-i18n="about-point3">Eco-Friendly & Sustainable Trekking Practices</p>
+                        </li>
+                    </ul>
+
+                    <a href="#packages" class="inline-flex items-center text-primary font-semibold hover:text-orange-600 transition-colors group">
+                        <span data-i18n="btn-view-packages">View Our Packages</span>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h3 class="text-secondary font-bold tracking-widest uppercase text-sm mb-2" data-i18n="pack-subtitle">Our Itineraries</h3>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6" data-i18n="pack-title">Premium Trekking Packages</h2>
+                <p class="text-lg text-gray-600" data-i18n="pack-desc">Choose the adventure that fits your schedule and fitness level. We ensure premium comfort on all our treks.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col fade-in-up">
+                    <div class="relative h-64 img-zoom-container">
+                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
+                        <!-- Example: src="images/rinjani2.jpeg" -->
+                        <img src="https://placehold.co/600x400/FF8A00/ffffff?text=Replace+with+rinjani2.jpeg" alt="2 Days 1 Night Summit" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">
+                            Best for Experts
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">2 Days 1 Night</h3>
+                        <h4 class="text-primary font-semibold mb-4" data-i18n="pack1-type">Summit Trekker</h4>
+                        <p class="text-gray-600 mb-6 flex-grow" data-i18n="pack1-desc">A challenging and quick trek designed for experienced hikers to conquer the summit.</p>
+                        
+                        <div class="space-y-2 mb-8 border-t border-gray-100 pt-6">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="far fa-clock mr-2"></i>Duration</span>
+                                <span class="font-medium text-gray-900">2D/1N</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Start/End</span>
+                                <span class="font-medium text-gray-900">Sembalun</span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/6285338667377?text=Hello%20Rinjani%20Excellent,%20I'm%20interested%20in%20the%202D1N%20Summit%20Package." target="_blank" class="block w-full py-3 px-4 bg-gray-50 hover:bg-primary hover:text-white text-primary text-center font-semibold rounded-xl border border-gray-200 transition-colors duration-300" data-i18n="btn-book-pack">
+                            Book This Package
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 2 (Highlighted) -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-primary transform md:-translate-y-4 flex flex-col relative fade-in-up">
+                    <div class="absolute top-0 left-0 w-full bg-primary text-white text-center py-1 text-sm font-bold tracking-wider z-10" data-i18n="pack-popular">
+                        MOST POPULAR
+                    </div>
+                    <div class="relative h-64 mt-6 img-zoom-container">
+                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
+                        <!-- Example: src="images/rinjani3.jpeg" -->
+                        <img src="https://placehold.co/600x400/00B4D8/ffffff?text=Replace+with+rinjani3.jpeg" alt="3 Days 2 Nights Crater Lake" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">3 Days 2 Nights</h3>
+                        <h4 class="text-primary font-semibold mb-4" data-i18n="pack2-type">Summit & Lake</h4>
+                        <p class="text-gray-600 mb-6 flex-grow" data-i18n="pack2-desc">The perfect balance. Experience the summit sunrise, crater lake, and natural hot springs.</p>
+                        
+                        <div class="space-y-2 mb-8 border-t border-gray-100 pt-6">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="far fa-clock mr-2"></i>Duration</span>
+                                <span class="font-medium text-gray-900">3D/2N</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Route</span>
+                                <span class="font-medium text-gray-900">Sembalun - Senaru</span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/6285338667377?text=Hello%20Rinjani%20Excellent,%20I'm%20interested%20in%20the%20Popular%203D2N%20Summit%20&%20Lake%20Package." target="_blank" class="block w-full py-3 px-4 bg-primary text-white hover:bg-orange-600 text-center font-semibold rounded-xl shadow-lg shadow-orange-500/30 transition-colors duration-300" data-i18n="btn-book-pack">
+                            Book This Package
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 flex flex-col fade-in-up">
+                    <div class="relative h-64 img-zoom-container">
+                        <!-- INSTRUCTION FOR USER: Replace this placeholder with your image -->
+                        <!-- Example: src="images/rinjani4.jpeg" -->
+                        <img src="https://placehold.co/600x400/FFB703/ffffff?text=Replace+with+rinjani4.jpeg" alt="4 Days 3 Nights Complete" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">
+                            Relaxing Pace
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">4 Days 3 Nights</h3>
+                        <h4 class="text-primary font-semibold mb-4" data-i18n="pack3-type">Complete Explorer</h4>
+                        <p class="text-gray-600 mb-6 flex-grow" data-i18n="pack3-desc">Take your time to soak in all the beauty Rinjani has to offer with a more relaxed itinerary.</p>
+                        
+                        <div class="space-y-2 mb-8 border-t border-gray-100 pt-6">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="far fa-clock mr-2"></i>Duration</span>
+                                <span class="font-medium text-gray-900">4D/3N</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Route</span>
+                                <span class="font-medium text-gray-900">Sembalun - Senaru</span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/6285338667377?text=Hello%20Rinjani%20Excellent,%20I'm%20interested%20in%20the%20Relaxing%204D3N%20Complete%20Package." target="_blank" class="block w-full py-3 px-4 bg-gray-50 hover:bg-primary hover:text-white text-primary text-center font-semibold rounded-xl border border-gray-200 transition-colors duration-300" data-i18n="btn-book-pack">
+                            Book This Package
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center fade-in-up">
+                <p class="text-gray-500 italic mb-4" data-i18n="custom-pack-desc">Need a custom itinerary or just want to trek to the crater rim?</p>
+                <a href="https://wa.me/6285338667377" target="_blank" class="inline-flex items-center text-secondary font-semibold hover:text-blue-700 transition-colors">
+                    <span data-i18n="btn-custom-pack">Contact us for custom packages</span>
+                    <i class="fas fa-comments ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h3 class="text-secondary font-bold tracking-widest uppercase text-sm mb-2" data-i18n="gallery-subtitle">Visual Journey</h3>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6" data-i18n="gallery-title">Moments on Rinjani</h2>
+                <p class="text-lg text-gray-600" data-i18n="gallery-desc">A glimpse of the spectacular views, our premium camping setup, and happy trekkers.</p>
+            </div>
+
+            <!-- CSS Grid for Masonry-like layout -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+                
+                <!-- INSTRUCTION FOR USER: Replace all src below with your local images from folder -->
+                
+                <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden img-zoom-container fade-in-up">
+                    <img src="https://placehold.co/800x800/1F2937/ffffff?text=rinjani5.jpeg" alt="Gallery Image 5" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up" style="transition-delay: 100ms;">
+                    <img src="https://placehold.co/400x400/FF8A00/ffffff?text=rinjani6.jpeg" alt="Gallery Image 6" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/400x400/00B4D8/ffffff?text=rinjani7.jpeg" alt="Gallery Image 7" class="w-full h-full object-cover">
+                </div>
+                <div class="col-span-2 rounded-2xl overflow-hidden img-zoom-container fade-in-up" style="transition-delay: 300ms;">
+                    <img src="https://placehold.co/800x400/FFB703/1F2937?text=rinjani8.jpeg" alt="Gallery Image 8" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Second row chunk -->
+                <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
+                    <img src="https://placehold.co/400x400/1F2937/ffffff?text=rinjani9.jpeg" alt="Gallery Image 9" class="w-full h-full object-cover">
+                </div>
+                <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden img-zoom-container fade-in-up">
+                    <img src="https://placehold.co/800x800/FF8A00/ffffff?text=rinjani10.jpeg" alt="Gallery Image 10" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
+                    <img src="https://placehold.co/400x400/00B4D8/ffffff?text=rinjani11.jpeg" alt="Gallery Image 11" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
+                    <img src="https://placehold.co/400x400/FFB703/1F2937?text=rinjani12.jpeg" alt="Gallery Image 12" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden img-zoom-container fade-in-up">
+                    <img src="https://placehold.co/400x400/1F2937/ffffff?text=rinjani13.jpeg" alt="Gallery Image 13" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Add more images from your folder (rinjani14.jpeg up to 30) following the structure above -->
+                <!-- You can just copy paste the div blocks and change the text/src -->
+            </div>
+            
+            <div class="mt-12 text-center fade-in-up">
+                <p class="text-sm text-gray-500" data-i18n="gallery-note">* We have placeholder images here. Replace `src` attributes in HTML with your `images/rinjaniX.jpeg` files.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-dark text-white pt-20 pb-10 border-t-8 border-primary relative overflow-hidden">
+        <!-- Decorative circle -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="lg:col-span-2">
+                    <span class="font-serif font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent inline-block mb-6">
+                        Rinjani Excellent
+                    </span>
+                    <p class="text-gray-400 mb-8 max-w-md leading-relaxed" data-i18n="footer-desc">
+                        Providing top-tier, unforgettable, and eco-friendly trekking experiences on Mount Rinjani. Your safety and satisfaction are our absolute priorities.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Social Links -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-tripadvisor"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white" data-i18n="footer-links">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-about">About Us</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-packages">Packages</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-primary transition-colors" data-i18n="nav-gallery">Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors" data-i18n="footer-faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white" data-i18n="footer-contact">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1.5 mr-3 text-primary"></i>
+                            <span class="text-gray-400">Senaru, Bayan, North Lombok, West Nusa Tenggara, Indonesia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-primary"></i>
+                            <a href="https://wa.me/6285338667377" class="text-gray-400 hover:text-white transition-colors">+62 853-3866-7377</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <a href="mailto:rinjaniexcellent@gmail.com" class="text-gray-400 hover:text-white transition-colors">rinjaniexcellent@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2024 Rinjani Excellent Tours. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Premium Trekking Partner</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285338667377" target="_blank" class="floating-wa" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // --- Navbar Scroll Effect ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/90', 'bg-white/95'); // slightly less transparent on scroll
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white/90');
+            }
+        });
+
+        // --- Mobile Menu Toggle ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')){
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // --- Intersection Observer for Scroll Animations (Fade in up) ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // --- Multi-Language Dictionary ---
+        const translations = {
+            en: {
+                "nav-about": "About",
+                "nav-packages": "Trekking Packages",
+                "nav-gallery": "Gallery",
+                "nav-contact": "Contact",
+                "nav-book": "Book Now",
+                "hero-tagline": "Premium Trekking Experience",
+                "hero-title1": "Conquer the Majesty of",
+                "hero-title2": "Mount Rinjani",
+                "hero-desc": "Join Rinjani Excellent for an unforgettable journey to the summit, crater lake, and hot springs with premium service and expert guides.",
+                "btn-explore": "Explore Packages",
+                "btn-chat": "Chat with Us",
+                "about-subtitle": "Why Choose Us",
+                "about-title1": "Experience Rinjani",
+                "about-title2": "Like Never Before",
+                "about-desc1": "At <strong>Rinjani Excellent</strong>, we don't just offer a trek; we provide a premium, safe, and exhilarating adventure. Our team consists of experienced, English-speaking local guides and porters who are dedicated to making your journey to the second highest volcano in Indonesia truly spectacular.",
+                "about-rating": "Top Rated Service",
+                "about-point1": "Premium Camping Equipment & Delicious Meals",
+                "about-point2": "Experienced & Certified Local Guides",
+                "about-point3": "Eco-Friendly & Sustainable Trekking Practices",
+                "btn-view-packages": "View Our Packages",
+                "pack-subtitle": "Our Itineraries",
+                "pack-title": "Premium Trekking Packages",
+                "pack-desc": "Choose the adventure that fits your schedule and fitness level. We ensure premium comfort on all our treks.",
+                "pack1-type": "Summit Trekker",
+                "pack1-desc": "A challenging and quick trek designed for experienced hikers to conquer the summit.",
+                "pack-popular": "MOST POPULAR",
+                "pack2-type": "Summit & Lake",
+                "pack2-desc": "The perfect balance. Experience the summit sunrise, crater lake, and natural hot springs.",
+                "pack3-type": "Complete Explorer",
+                "pack3-desc": "Take your time to soak in all the beauty Rinjani has to offer with a more relaxed itinerary.",
+                "btn-book-pack": "Book This Package",
+                "custom-pack-desc": "Need a custom itinerary or just want to trek to the crater rim?",
+                "btn-custom-pack": "Contact us for custom packages",
+                "gallery-subtitle": "Visual Journey",
+                "gallery-title": "Moments on Rinjani",
+                "gallery-desc": "A glimpse of the spectacular views, our premium camping setup, and happy trekkers.",
+                "gallery-note": "* Note for admin: Replace placeholder images with local files (rinjani1.jpeg - rinjani30.jpeg).",
+                "footer-desc": "Providing top-tier, unforgettable, and eco-friendly trekking experiences on Mount Rinjani. Your safety and satisfaction are our absolute priorities.",
+                "footer-links": "Quick Links",
+                "footer-faq": "FAQ",
+                "footer-contact": "Contact Us"
+            },
+            id: {
+                "nav-about": "Tentang Kami",
+                "nav-packages": "Paket Pendakian",
+                "nav-gallery": "Galeri",
+                "nav-contact": "Kontak",
+                "nav-book": "Pesan Sekarang",
+                "hero-tagline": "Pengalaman Pendakian Premium",
+                "hero-title1": "Taklukkan Kemegahan",
+                "hero-title2": "Gunung Rinjani",
+                "hero-desc": "Bergabunglah dengan Rinjani Excellent untuk perjalanan tak terlupakan ke puncak, danau kawah, dan pemandian air panas dengan layanan premium dan pemandu ahli.",
+                "btn-explore": "Jelajahi Paket",
+                "btn-chat": "Hubungi Kami",
+                "about-subtitle": "Mengapa Memilih Kami",
+                "about-title1": "Jelajahi Rinjani",
+                "about-title2": "Lebih Dari Sebelumnya",
+                "about-desc1": "Di <strong>Rinjani Excellent</strong>, kami tidak sekadar menawarkan pendakian; kami menyajikan petualangan premium, aman, dan mendebarkan. Tim kami terdiri dari pemandu lokal berpengalaman yang berdedikasi untuk membuat perjalanan Anda di gunung berapi tertinggi kedua di Indonesia ini menjadi luar biasa.",
+                "about-rating": "Layanan Terbaik",
+                "about-point1": "Peralatan Kemah Premium & Makanan Lezat",
+                "about-point2": "Pemandu Lokal Berpengalaman & Tersertifikasi",
+                "about-point3": "Praktik Pendakian Ramah Lingkungan",
+                "btn-view-packages": "Lihat Paket Kami",
+                "pack-subtitle": "Jadwal Kami",
+                "pack-title": "Paket Pendakian Premium",
+                "pack-desc": "Pilih petualangan yang sesuai dengan jadwal dan tingkat kebugaran Anda. Kami menjamin kenyamanan ekstra di semua pendakian kami.",
+                "pack1-type": "Penjelajah Puncak",
+                "pack1-desc": "Pendakian yang menantang dan cepat, dirancang khusus untuk pendaki berpengalaman untuk menaklukkan puncak.",
+                "pack-popular": "PALING DIMINATI",
+                "pack2-type": "Puncak & Danau",
+                "pack2-desc": "Keseimbangan sempurna. Nikmati matahari terbit di puncak, keindahan danau kawah, dan pemandian air panas alami.",
+                "pack3-type": "Eksplorasi Lengkap",
+                "pack3-desc": "Luangkan waktu Anda untuk meresapi semua keindahan yang ditawarkan Rinjani dengan jadwal yang lebih santai.",
+                "btn-book-pack": "Pesan Paket Ini",
+                "custom-pack-desc": "Butuh jadwal khusus atau hanya ingin mendaki sampai pelawangan?",
+                "btn-custom-pack": "Hubungi kami untuk paket kustom",
+                "gallery-subtitle": "Perjalanan Visual",
+                "gallery-title": "Momen di Rinjani",
+                "gallery-desc": "Sekilas tentang pemandangan spektakuler, setup kemah premium kami, dan para pendaki yang bahagia.",
+                "gallery-note": "* Catatan admin: Ganti gambar placeholder dengan file lokal (rinjani1.jpeg - rinjani30.jpeg).",
+                "footer-desc": "Memberikan pengalaman pendakian kelas atas, tak terlupakan, dan ramah lingkungan di Gn. Rinjani. Keselamatan dan kepuasan Anda adalah prioritas utama kami.",
+                "footer-links": "Tautan Cepat",
+                "footer-faq": "Tanya Jawab",
+                "footer-contact": "Hubungi Kami"
+            }
+        };
+
+        // --- Multi-Language Logic ---
+        function setLang(lang) {
+            // Update Text content based on data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    // Use innerHTML to parse elements like <strong> inside translation strings
+                    element.innerHTML = translations[lang][key]; 
+                }
+            });
+
+            // Update button styles (Desktop)
+            const btnEn = document.getElementById('btn-en');
+            const btnId = document.getElementById('btn-id');
+            // Update button styles (Mobile)
+            const btnEnMob = document.getElementById('btn-en-mob');
+            const btnIdMob = document.getElementById('btn-id-mob');
+
+            const activeClass = ['bg-white', 'shadow-sm', 'text-primary', 'font-bold'];
+            const inactiveClass = ['text-gray-500', 'font-medium', 'hover:text-gray-800', 'bg-transparent'];
+
+            if (lang === 'en') {
+                document.documentElement.lang = 'en';
+                // Desktop
+                btnEn.classList.add(...activeClass);
+                btnEn.classList.remove(...inactiveClass);
+                btnId.classList.add(...inactiveClass);
+                btnId.classList.remove(...activeClass);
+                // Mobile
+                btnEnMob.classList.add(...activeClass);
+                btnEnMob.classList.remove(...inactiveClass);
+                btnIdMob.classList.add(...inactiveClass);
+                btnIdMob.classList.remove(...activeClass);
+            } else {
+                document.documentElement.lang = 'id';
+                // Desktop
+                btnId.classList.add(...activeClass);
+                btnId.classList.remove(...inactiveClass);
+                btnEn.classList.add(...inactiveClass);
+                btnEn.classList.remove(...activeClass);
+                // Mobile
+                btnIdMob.classList.add(...activeClass);
+                btnIdMob.classList.remove(...inactiveClass);
+                btnEnMob.classList.add(...inactiveClass);
+                btnEnMob.classList.remove(...activeClass);
+            }
+        }
+        
+        // Initialize with English
+        setLang('en');
+
+    </script>
+</body>
+</html>
