@@ -21,18 +21,16 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#FF8A00', secondary: '#00B4D8', accent: '#FFB703', dark: '#1F2937',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'],
-                    }
+                    colors: { primary: '#FF8A00', secondary: '#00B4D8', accent: '#FFB703', dark: '#1F2937' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
                 }
             }
         }
     </script>
     <style>
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .zoomable-img { cursor: zoom-in; transition: transform 0.3s ease; }
+        .zoomable-img:hover { transform: scale(1.02); }
     </style>
 </head>
 <body class="font-sans text-gray-700 bg-gray-50">
@@ -46,19 +44,45 @@
                         Rinjani Excellence
                     </span>
                 </a>
+                
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Home</a>
-                    <a href="itinerary.html" class="text-primary font-bold transition-colors">Itinerary Details</a>
-                    <a href="blog.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Blog</a>
+                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-home">Home</a>
+                    <a href="index.html#packages" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-packages">Packages</a>
+                    <a href="itinerary.html" class="text-primary font-bold transition-colors" data-i18n="nav-itinerary">Itinerary</a>
+                    <a href="blog.html" class="text-gray-800 hover:text-primary font-medium transition-colors" data-i18n="nav-blog">Blog</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
+                        <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-full text-sm font-bold bg-white shadow-sm text-primary">EN</button>
+                        <button onclick="setLang('id')" id="btn-id" class="px-3 py-1 rounded-full text-sm font-medium text-gray-500 hover:text-gray-800">ID</button>
+                    </div>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-home">Home</a>
+                <a href="index.html#packages" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-packages">Packages</a>
+                <a href="itinerary.html" class="block px-3 py-3 text-base font-medium text-primary bg-primary/5 rounded-md" data-i18n="nav-itinerary">Itinerary</a>
+                <a href="blog.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-primary rounded-md" data-i18n="nav-blog">Blog</a>
             </div>
         </div>
     </nav>
 
     <header class="pt-32 pb-12 bg-white border-b border-gray-100 text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">Complete Trekking Itineraries</h1>
-            <p class="text-lg text-gray-600">Review our detailed plans and prepare for the journey of a lifetime.</p>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4" data-i18n="header-title">Complete Trekking Itineraries</h1>
+            <p class="text-lg text-gray-600" data-i18n="header-desc">Review our detailed plans and prepare for the journey of a lifetime.</p>
         </div>
     </header>
 
@@ -67,24 +91,26 @@
             
             <!-- 2D1N SECTION -->
             <div id="2d1n" class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <img src="images/rinjani17.jpeg" alt="2D1N" class="w-full h-64 object-cover">
+                <img src="images/rinjani2.jpeg" alt="2D1N" class="w-full h-80 object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 <div class="p-8 md:p-12">
                     <div class="inline-block px-4 py-1 rounded-full bg-orange-100 text-primary font-bold text-sm mb-4">Package 1</div>
-                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2">2 Days 1 Night Summit</h2>
-                    <p class="text-gray-600 mb-8 border-b pb-6">Start from Sembalun to Sembalun Crater Rim, camp, climb summit, and return to Sembalun.</p>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2">MOUNT RINJANI TREKING 2 DAYS 1 NIGHT SUMMIT</h2>
+                    <p class="text-gray-600 mb-8 border-b pb-6">Mount Rinjani 2 days 1 night trek start from Sembalun to the Sembalun Crater rim, camping tent, climb to summit Rinjani and return to Sembalun village in East Lombok. This Hikking Mount Rinjani program the signt for climbers or trekker in good level of fitness and able to walk up and down for an average of 8.5 hours per day.</p>
                     
+                    <h3 class="text-xl font-bold text-primary mb-4">(Sembalun Village - Sembalun Crater Rim - Summit)</h3>
+
                     <div class="space-y-6">
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h4 class="font-bold text-gray-900">Day 0: Arrival</h4>
-                            <p class="text-gray-600 mt-2">Pick up at Lombok area, transfer to Senaru/Sembalun hotel. Briefing with guide and warming up walk to Sindang Gile waterfall.</p>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-gray-900">Arrival Day On Lombok / Day 0:</h4>
+                            <p class="text-gray-600 mt-2">We'll doing pick you up at the Lombok or other place on Lombok island and transfer to the hotel in Senaru or Sembalun village (on request). Meet Your trekking guide will provide guidance to better prepare you for the journey and we will guide you to Sindang Gile waterfall for warming up before trekking Rinjani next day and back to hotel provided then dinner.</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h4 class="font-bold text-gray-900">Day 1: Sembalun to Crater Rim (2639m)</h4>
-                            <p class="text-gray-600 mt-2">Start 8:00 AM from Sembalun. Trek through open meadow. Pass Pos 1, 2, and 3. Steep climb to crater rim. Camp and enjoy sunset.</p>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-gray-900">Day 1:</h4>
+                            <p class="text-gray-600 mt-2">Wake up at 06:30 and get breakfast. After that, 07:00 we will drive you to the village of Sembalun (1100 m) and register at the Rinjani Information Center Office Sembalun. Trekking start from the village of Sembalun around 8:00 am. We start with a gentle climb through open meadow. After about 2 hours of walking, we will reach the post 1 (1300m), and another 40 minutes to Pos 2 (1500m). We will continue to Pos 3 (1800m) and have lunch here. After lunch and rest, we will go to Sembalun crater rim (2639m). It takes 3 hours including a prolonged steep climb. We will camp the night on the crater rim. We can enjoy the view of sunrise and sunset.</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h4 class="font-bold text-gray-900">Day 2: Summit (3726m) & Descent</h4>
-                            <p class="text-gray-600 mt-2">Wake up 2:00 AM. Trek to summit for sunrise. Descend to camp for breakfast, then trek down to Sembalun (5 hours). Transfer to next destination.</p>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-gray-900">Day 2:</h4>
+                            <p class="text-gray-600 mt-2">We wake up around 02:00 am under the cover of darkness with a hot drink and a light breakfast. We will start heading to the summit of Rinjani at 03:00 am. We start with a moderate trek, followed by a fairly easy but longer trek. Final approach that involves climbing up steep volcanic scree looser. At 06:00 am, we can reach the summit (3726 m) with a beautiful sunrise, and panoramic view of Lombok island, the island of Bali, the island of Sumbawa and Segara Anak Lake. After that, we will descend into the crater rim Sembalun within 2 hours and have breakfast here. Then will continue to go down to the village of Sembalun, which takes 5 hours to reach down. Car will take us to the village of Senaru (Rinjani Excellent) and we'll transfer to your the next destination.</p>
                         </div>
                     </div>
                 </div>
@@ -92,25 +118,50 @@
 
             <!-- 3D2N SECTION -->
             <div id="3d2n" class="bg-white rounded-2xl shadow-xl overflow-hidden border border-primary border-2">
-                <div class="bg-primary text-white text-center py-2 font-bold tracking-widest text-sm">MOST POPULAR PACKAGE</div>
-                <img src="images/rinjani18.jpeg" alt="3D2N" class="w-full h-64 object-cover">
+                <div class="bg-primary text-white text-center py-2 font-bold tracking-widest text-sm" data-i18n="pack-popular">MOST POPULAR PACKAGE</div>
+                <img src="images/rinjani3.jpeg" alt="3D2N" class="w-full h-80 object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 <div class="p-8 md:p-12">
                     <div class="inline-block px-4 py-1 rounded-full bg-blue-100 text-secondary font-bold text-sm mb-4">Package 2</div>
-                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2">3 Days 2 Nights: Summit, Lake & Hot Spring</h2>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2">Mount Rinjani Trekking 3 Days 2 Night</h2>
                     <p class="text-gray-600 mb-8 border-b pb-6">Sembalun Crater Rim - Summit, Lake & Hot Spring - Senaru Crater Rim</p>
                     
                     <div class="space-y-6">
                         <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-secondary">
-                            <h4 class="font-bold text-gray-900">Day 1: Sembalun to Crater Rim (2639m)</h4>
-                            <p class="text-gray-600 mt-2">Transfer to Sembalun. Trek through open grassland. Rest at Pos 1, 2, and 3. Ascend to Sembalun Crater Rim. Camp overnight.</p>
+                            <h4 class="font-bold text-gray-900">Arrival Day On Lombok Islands</h4>
+                            <p class="text-gray-600 mt-2">We provide private pick-up service across Lombok Airport / Central of lombok <br>✓ Kuta Or Mandalika / Central of lombok <br>✓ Lembar Harbor / west of lombok <br>✓ Mataram City / Central of lombok <br>✓ Senggigi Beach / Central of lombok <br>✓ Teluk nare / North of lombok <br>✓ Teluk Kodeq / North of lombok <br>✓ Bangsal / Harbor North of lombok <br>✓ Kayangan / Harbor east of lombok <br>✓ Tete Batu / Central of lombok</p>
+                            <p class="text-gray-600 mt-2">And then transfer to Senaru Village and Check in at the Senaru accommodation with hot/cold water, briefing and free at your leisure time. If your time allowing 3 hours before sunset you can visit doing the Famous Waterfall in Senaru area close from your where you stay in Senaru village Sendang Gile and Tiu Kelep Waterfalls</p>
                         </div>
                         <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-secondary">
-                            <h4 class="font-bold text-gray-900">Day 2: Summit, Lake & Hot Springs</h4>
-                            <p class="text-gray-600 mt-2">Wake 2:00 AM for Summit (3726m). Return for breakfast. Descend to Segara Anak Lake (2000m) for lunch and hot springs. Climb to Senaru Crater Rim (2641m) for 2nd night camp.</p>
+                            <h4 class="font-bold text-gray-900">The First Day Doing Hiking Trek Itinerary. Day:01</h4>
+                            <p class="text-gray-600 mt-2">Our guide and driver meet you at Senaru accommodation and will be pick up you at lobby at 06.00 am. Then transfer to Sembalun Village by the car. And register / check in barcode code of the ticket and check up at office Rinjani Information Center (RIC) in Sembalun Lawang (1,156 m), and your guide and arrange National Park entry tickets. Your guide gives you a briefing describing fews minute the route details, local cultural traditions and what do you might see thing to do and explains rubbish management and safety procedur...</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-secondary">
-                            <h4 class="font-bold text-gray-900">Day 3: Descent to Senaru</h4>
-                            <p class="text-gray-600 mt-2">Trek down through thick tropical forest (4-5 hours) to Senaru village. Transfer to next destination in Lombok.</p>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-gray-900 mb-4">MENU ON RINJANI TREK (We Serve Vegetarian Food or Other Dietary Food As Well)</h4>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm mt-4">
+                                <div>
+                                    <p class="font-bold text-primary">DAY 01</p>
+                                    <p class="font-semibold mt-2">LUNCH BREAK:</p>
+                                    <ul class="list-disc pl-4 text-gray-600"><li>Fried Chicken Special</li><li>Fried Potatoes</li><li>Fruits Salad</li><li>Mineral Water</li><li>Tea or Coffee</li></ul>
+                                    <p class="font-semibold mt-2">DINNER BREAK:</p>
+                                    <ul class="list-disc pl-4 text-gray-600"><li>Chicken Curry</li><li>Steam Rice</li><li>Hot Chocolate or Milk</li><li>Tea or Coffee</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-primary">DAY 02</p>
+                                    <p class="font-semibold mt-2">BREAKFAST:</p>
+                                    <ul class="list-disc pl-4 text-gray-600"><li>Banana or Pineapple Pancake</li><li>Cheese Tomato Sandwich</li><li>Fruits Salad</li><li>Tea/Coffee/Chocolate/Milk/Soft Drink</li></ul>
+                                    <p class="font-semibold mt-2">LUNCH BREAK:</p>
+                                    <ul class="list-disc pl-4 text-gray-600"><li>Fried Rice Special</li><li>Fruits Salad</li><li>Drinking Mineral Water</li><li>Tea/Coffee/Soft Drink</li></ul>
+                                    <p class="font-semibold mt-2">DINNER BREAK:</p>
+                                    <ul class="list-disc pl-4 text-gray-600"><li>Noodle Soup</li><li>Fried Potatoe</li><li>Steam Rice</li><li>Soft Drinks/Coffee/Tea</li><li>Fruits Salad</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-primary">DAY 03</p>
+                                    <p class="font-semibold mt-2">BREAKFAST:</p>
+                                    <ul class="list-disc pl-4 text-gray-600"><li>Banana or Pineapple Pancake</li><li>Sandwich</li><li>Fruits Salad</li><li>Tea/Coffee/Soft Drink</li></ul>
+                                    <p class="font-semibold mt-2">LUNCH BREAK:</p>
+                                    <ul class="list-disc pl-4 text-gray-600"><li>Fried Noodle Special</li><li>Fruits Salad</li><li>Coffee or Tea / Soft Drink</li></ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,50 +169,73 @@
 
             <!-- 4D3N SECTION -->
             <div id="4d3n" class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <img src="images/rinjani19.jpeg" alt="4D3N" class="w-full h-64 object-cover">
+                <img src="images/rinjani4.jpeg" alt="4D3N" class="w-full h-80 object-cover zoomable-img" onclick="openFullscreenImg(this.src)">
                 <div class="p-8 md:p-12">
                     <div class="inline-block px-4 py-1 rounded-full bg-green-100 text-green-700 font-bold text-sm mb-4">Package 3</div>
-                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2">4 Days 3 Nights: Complete Explorer</h2>
-                    <p class="text-gray-600 mb-8 border-b pb-6">A more relaxed pace to enjoy all of Mount Rinjani's offerings.</p>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2">Mount Rinjani Trekking 4 Days 3 Night</h2>
+                    <p class="text-gray-600 mb-8 border-b pb-6">(Sembalun Crater Rim - Summit Lake & Hot spring - Senaru Crater Rim)</p>
+                    
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">MOUNT RINJANI TREK ITINERARY:</h3>
                     
                     <div class="space-y-6">
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h4 class="font-bold text-gray-900">Day 1: Ascent to Sembalun Crater Rim</h4>
-                            <p class="text-gray-600 mt-2">Trek from Sembalun Lawang. Pass POS 1, 2, 3. Steep climb to Sembalun Crater Rim. Set up camp.</p>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-gray-900">Day 0:</h4>
+                            <p class="text-gray-600 mt-2">Pick up service (Lombok Airport, Lembar Harbor, Mataram City, Senggigi Beach, Teluk Nare, Teluk Kodeq, Bangsal Harbor, Kayangan Harbor, Tete Batu) then transfer to Senaru Village and Check in at Senaru Accommodation (with hot & cold water, ), briefing and free at your leisure. If time allowing (3 hours before sunset) you can visit the Famous Waterfall in Lombok (Sendang Gile and Tiu Kelep Waterfall.</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h4 class="font-bold text-gray-900">Day 2: Summit & Lake Camping</h4>
-                            <p class="text-gray-600 mt-2">Summit attack at 2:00 AM. After breakfast, descend to Segara Anak Lake. Camp by the lake and visit Hot Springs.</p>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-gray-900">Day 01:</h4>
+                            <p class="text-gray-600 mt-2">After Breakfast at 07.00am and transfer to sembalun village, drive for 1.5 hour, Register the Rinjani Information Center (RIC) in Sembalun Lawang (1,156 m), meet your guide and arrange National Park entry tickets and with medical chek. Your guide gives you a briefing describing the route details, local cultural traditions and what you might see, and explains rubbish management and safety procedures. The trek starts from Sembalun Lawang with the gentle ascent walking through open grassland used as cattle grazing by local people. Resting at Pos 1 Pemantauan (1,300), after about three hours from Sembalun we reach Pos 2 Tengengean (1,500 m) enjoying the beautiful views of Mt. Rinjani summit (3,726 m). After another hours ascent to Pos 3 Pada Balong (1,800 m), we start the step 3,5...</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h4 class="font-bold text-gray-900">Day 3: Relax at Lake & Climb to Senaru Rim</h4>
-                            <p class="text-gray-600 mt-2">Relaxing morning. After lunch, climb 2.5 hours to Senaru Crater Rim. Camp here with views of Mt. Agung, Bali.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h4 class="font-bold text-gray-900">Day 4: Jungle Descent to Senaru</h4>
-                            <p class="text-gray-600 mt-2">Trek down 5 hours through tropical forest. Trek ends at Rinjani Excellence Office around 13:30.</p>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <p class="text-gray-600">...tree bunut ngengkang that looks like someone standing with their legs apart. After seven hours walk from the rim, (or five hours from Pos 3 Mondokon Lolak), the trek ends at Rinjani Trek Center at the road head in Senaru, Trek end it a round 13:30, (Rinjani Excellent Office) and then Transfer out to your next destination (following tho Spot on Day 0)</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- INCLUSIONS -->
-            <div class="bg-dark text-white rounded-2xl p-8 md:p-12 shadow-2xl mt-12">
-                <h3 class="text-2xl font-bold mb-6 text-primary border-b border-gray-700 pb-4">Standard Inclusions for All Packages</h3>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> Night at Senaru Accommodation (Day 0)</li>
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> Transport Pick-up / Drop-off</li>
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> Experienced English Speaking Guide</li>
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> Experienced Local Porters</li>
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> Premium Camping Equipment (Tent, Sleeping bag)</li>
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> Meals (3x a day), Fruits, Cakes, Mineral Water</li>
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> National Park Entrance Fee</li>
-                    <li><i class="fas fa-check text-green-400 mr-3"></i> Trekking Insurance</li>
-                </ul>
+            <div class="bg-dark text-white rounded-2xl p-8 md:p-12 shadow-2xl mt-12 grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary border-b border-gray-700 pb-4"><i class="fas fa-check-circle text-green-500 mr-2"></i> RATE INCLUSIONS:</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> A Night At Senaru accommodation (Hot&Cold Water, Wifi).</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> Transport (Pick Up / Drop Off)</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> Experienced, Friendly, English Speaking Mountain Guide.</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> Experienced Local Porter.</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> Camping Equipments & Cooking Gears.</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> Meals (3 Times A Day), Fruits & Cakes.</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> Mineral Water 2 bottles per day.</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> Trekking Insurance (Cooperate With National Park).</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i> National Park Entrance Fee (Ticket) an IDR 250.000/each per day.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary border-b border-gray-700 pb-4"><i class="fas fa-times-circle text-red-500 mr-2"></i> WHAT RATE EXCLUDE:</h3>
+                    <p class="font-semibold text-white mb-2">PERSONAL STUFF (Trek To Bring):</p>
+                    <p class="text-xs text-gray-400 mb-4">Here you Day Packs Personal (to carry by yourself). Additional charge if you need Extra Porter to carry your Personal Stuff (US$ 25 - $30 a Day) and the rest of your luggage will keep at our storage room:</p>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>• Torch or Flashlight.</li>
+                        <li>• Trekking / Running Shoes / Boots.</li>
+                        <li>• 2/3 pcs. T-Shirt & 2 pcs. Short.</li>
+                        <li>• Sun Block, Lotion, Hat, Cap, Sun Glasses.</li>
+                        <li>• Long Pants, Warmest Jacket, Gloves, Warm Hat.</li>
+                        <li>• Tiger Balm or Spray For Muscle.</li>
+                        <li>• Camera, Toiletries, Insect Repellent, Personal Medication.</li>
+                        <li>• Trekking Poles / Stick, Sandal, Swimming Suite, Binocular (Optional).</li>
+                    </ul>
+                </div>
             </div>
             
         </div>
     </section>
+
+    <!-- Fullscreen Image Modal (Lightbox) -->
+    <div id="image-modal" class="hidden fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm cursor-zoom-out transition-opacity duration-300 opacity-0" onclick="closeFullscreenImg()">
+        <button onclick="closeFullscreenImg()" class="absolute top-6 right-6 text-white hover:text-primary transition-colors z-20">
+            <i class="fas fa-times text-4xl"></i>
+        </button>
+        <img id="fullscreen-img" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transition-transform duration-300 transform scale-95" onclick="event.stopPropagation()">
+    </div>
 
     <!-- Footer Simple -->
     <footer class="bg-dark text-white py-10 border-t border-gray-800 text-center">
@@ -171,5 +245,77 @@
         </a>
     </footer>
 
+    <script>
+        // --- Mobile Menu Toggle ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')){
+                icon.classList.remove('fa-times'); icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars'); icon.classList.add('fa-times');
+            }
+        });
+
+        // --- FULLSCREEN IMAGE LIGHTBOX LOGIC ---
+        function openFullscreenImg(src) {
+            const modal = document.getElementById('image-modal');
+            const img = document.getElementById('fullscreen-img');
+            img.src = src;
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0'); modal.classList.add('opacity-100');
+                img.classList.remove('scale-95'); img.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFullscreenImg() {
+            const modal = document.getElementById('image-modal');
+            const img = document.getElementById('fullscreen-img');
+            modal.classList.remove('opacity-100'); modal.classList.add('opacity-0');
+            img.classList.remove('scale-100'); img.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden'); document.body.style.overflow = 'auto'; img.src = '';
+            }, 300);
+        }
+
+        // --- Multi-Language Dictionary ---
+        const translations = {
+            en: {
+                "nav-home": "Home", "nav-packages": "Packages", "nav-itinerary": "Itinerary", "nav-blog": "Blog",
+                "header-title": "Complete Trekking Itineraries", "header-desc": "Review our detailed plans and prepare for the journey of a lifetime.",
+                "pack-popular": "MOST POPULAR PACKAGE"
+            },
+            id: {
+                "nav-home": "Beranda", "nav-packages": "Paket Pendakian", "nav-itinerary": "Detail Jadwal", "nav-blog": "Blog",
+                "header-title": "Jadwal Lengkap Pendakian", "header-desc": "Tinjau rencana terperinci kami dan bersiaplah untuk perjalanan seumur hidup.",
+                "pack-popular": "PAKET PALING DIMINATI"
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+            const btnEn = document.getElementById('btn-en'); const btnId = document.getElementById('btn-id');
+            const active = ['bg-white','shadow-sm','text-primary','font-bold'];
+            const inactive = ['text-gray-500','font-medium','hover:text-gray-800','bg-transparent'];
+            if(lang==='en'){
+                document.documentElement.lang = 'en';
+                btnEn.classList.add(...active); btnEn.classList.remove(...inactive);
+                btnId.classList.add(...inactive); btnId.classList.remove(...active);
+            }else{
+                document.documentElement.lang = 'id';
+                btnId.classList.add(...active); btnId.classList.remove(...inactive);
+                btnEn.classList.add(...inactive); btnEn.classList.remove(...active);
+            }
+        }
+        setLang('en');
+    </script>
 </body>
 </html>
