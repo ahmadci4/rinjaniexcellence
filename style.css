@@ -1,0 +1,13 @@
+/* --- Anti Copy-Paste: Mencegah teks di-blok --- */
+body {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/* Biarkan form input tetap bisa diketik */
+input, textarea, select {
+    -webkit-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
